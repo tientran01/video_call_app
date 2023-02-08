@@ -310,10 +310,10 @@ class S {
     );
   }
 
-  /// `Start Meeting`
+  /// `Start a Meeting`
   String get start_meeting {
     return Intl.message(
-      'Start Meeting',
+      'Start a Meeting',
       name: 'start_meeting',
       desc: '',
       args: [],
@@ -335,6 +335,46 @@ class S {
     return Intl.message(
       'Edit Meeting',
       name: 'edit_meeting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End`
+  String get end {
+    return Intl.message(
+      'End',
+      name: 'end',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Join Audio`
+  String get join_audio {
+    return Intl.message(
+      'Join Audio',
+      name: 'join_audio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stop Video`
+  String get stop_video {
+    return Intl.message(
+      'Stop Video',
+      name: 'stop_video',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Participants`
+  String get participant {
+    return Intl.message(
+      'Participants',
+      name: 'participant',
       desc: '',
       args: [],
     );

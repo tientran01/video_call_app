@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "contacts": MessageLookupByLibrary.simpleMessage("Contacts"),
         "edit_meeting": MessageLookupByLibrary.simpleMessage("Edit Meeting"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "end": MessageLookupByLibrary.simpleMessage("End"),
         "enter_your_email_address":
             MessageLookupByLibrary.simpleMessage("Enter your email address"),
         "find_people": MessageLookupByLibrary.simpleMessage(
@@ -40,11 +41,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "get_started": MessageLookupByLibrary.simpleMessage(
             "Get started with your account"),
         "join": MessageLookupByLibrary.simpleMessage("Join"),
+        "join_audio": MessageLookupByLibrary.simpleMessage("Join Audio"),
         "join_meeting": MessageLookupByLibrary.simpleMessage("Join meeting"),
         "meeting_id": MessageLookupByLibrary.simpleMessage("Meeting ID"),
         "meetings": MessageLookupByLibrary.simpleMessage("Meetings"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "new_meeting": MessageLookupByLibrary.simpleMessage("New meeting"),
+        "participant": MessageLookupByLibrary.simpleMessage("Participants"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "personal_metting_id":
             MessageLookupByLibrary.simpleMessage("Personal Meeting ID"),
@@ -55,7 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "share_screen": MessageLookupByLibrary.simpleMessage("Share Screen"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
-        "start_meeting": MessageLookupByLibrary.simpleMessage("Start Meeting"),
+        "start_meeting":
+            MessageLookupByLibrary.simpleMessage("Start a Meeting"),
+        "stop_video": MessageLookupByLibrary.simpleMessage("Stop Video"),
         "team_chat": MessageLookupByLibrary.simpleMessage("Team Chat"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome")
       };

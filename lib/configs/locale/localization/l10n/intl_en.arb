@@ -25,7 +25,11 @@
       "add_contacts": "Add Contacts",
       "channels": "Channels",
       "personal_metting_id": "Personal Meeting ID",
-      "start_meeting": "Start Meeting",
+      "start_meeting": "Start a Meeting",
       "send_invitaion": "Send Invitation",
-      "edit_meeting": "Edit Meeting"
+      "edit_meeting": "Edit Meeting",
+      "end": "End",
+      "join_audio": "Join Audio",
+      "stop_video": "Stop Video",
+      "participant": "Participants"
 }

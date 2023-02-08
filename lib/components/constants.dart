@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'dimens.dart';
 
 class Constants {
+  static const emptyBox = SizedBox();
   static const verticalBox5 = SizedBox(
     height: Dimens.size5,
   );
   static const verticalBox10 = SizedBox(
     height: Dimens.size10,
+  );
+  static const verticalBox20 = SizedBox(
+    height: Dimens.size20,
   );
   static const verticalBox30 = SizedBox(
     height: Dimens.size30,
@@ -15,6 +19,10 @@ class Constants {
   static const verticalBox50 = SizedBox(
     height: Dimens.size50,
   );
+  static const edgeInsetsAll2 = EdgeInsets.all(Dimens.size2);
+  static const edgeInsetsAll3 = EdgeInsets.all(Dimens.size3);
+  static const edgeInsetsAll5 = EdgeInsets.all(Dimens.size5);
   static const edgeInsetsAll10 = EdgeInsets.all(Dimens.size10);
   static const edgeInsetsAll15 = EdgeInsets.all(Dimens.size15);
+  static const edgeInsetsAll20 = EdgeInsets.all(Dimens.size20);
 }

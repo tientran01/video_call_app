@@ -24,6 +24,7 @@ class CustomButtonIconWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           InkWell(
+            highlightColor: Colors.transparent,
             onTap: onTap,
             child: Container(
               padding: Constants.edgeInsetsAll15,

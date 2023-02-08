@@ -1,0 +1,9 @@
+export 'package:flutter/material.dart';
+export 'package:video_call_app/components/app_colors.dart';
+export 'package:video_call_app/components/dimens.dart';
+export 'package:video_call_app/configs/locale/generated/l10n.dart';
+export 'package:video_call_app/pages/contacts/contact_page.dart';
+export 'package:video_call_app/pages/meetings/meeting_page.dart';
+export 'package:video_call_app/pages/more/more_page.dart';
+export 'package:video_call_app/pages/team_chat/team_chat_page.dart';
+export '../../gen/assets.gen.dart';

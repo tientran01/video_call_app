@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:video_call_app/components/app_colors.dart';
-import 'package:video_call_app/components/dimens.dart';
-import 'package:video_call_app/configs/locale/generated/l10n.dart';
-import 'package:video_call_app/pages/meetings/meeting_page.dart';
-
-import '../../gen/assets.gen.dart';
+import 'screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,9 +14,9 @@ class _HomePageState extends State<HomePage> {
 
   final _buildBody = const <Widget>[
     MeetingPage(),
-    ColoredBox(color: Colors.red),
-    ColoredBox(color: Colors.amber),
-    MeetingPage(),
+    TeamChatPage(),
+    ContactPage(),
+    MorePage(),
   ];
 
   Color _getItemColor(int index) =>
@@ -31,23 +25,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: Dimens.size0,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Assets.icons.icInfo.image(
-              width: Dimens.size25,
-            ),
-          ),
-        ],
-      ),
+      backgroundColor: AppColors.arsenic,
       body: IndexedStack(
         index: _currentIndex,
         children: _buildBody,
       ),
-      bottomNavigationBar: _bottomNavigationBar(),
+      bottomNavigationBar: Theme(
+        data: ThemeData(
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          focusColor: Colors.transparent,
+        ),
+        child: _bottomNavigationBar(),
+      ),
     );
   }
 
