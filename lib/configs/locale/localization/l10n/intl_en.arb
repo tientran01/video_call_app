@@ -31,5 +31,19 @@
       "end": "End",
       "join_audio": "Join Audio",
       "stop_video": "Stop Video",
-      "participant": "Participants"
+      "participant": "Participants",
+      "my_contacts": "My Contacts",
+      "starred": "Starred",
+      "external_contacts": "External Contacts",
+      "search_contacts": "Search contacts",
+      "connect_phone_contacts": "Connect Phone Contacts",
+      "join_a_channel": "Join a Channel",
+      "create_new_channel": "Create a New Channel",
+      "create_an_phone_contact": "Create an iPhone Contact",
+      "invite_contact": "Invite a Contact",
+      "phone_contacts_matching": "Phone Contacts Matching",
+      "add_your_phone_number": "Add your phone number",
+      "phone_number": "Phone Number",
+      "continue_": "Continue"
+
 }

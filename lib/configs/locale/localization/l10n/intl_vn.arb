@@ -31,5 +31,18 @@
       "end": "Rời khỏi",
       "join_audio": "Kết nối âm thanh",
       "stop_video": "Dừng video",
-      "participant": "Người tham gia"
+      "participant": "Người tham gia",
+      "my_contacts": "Danh bạ của tôi",
+      "starred": "Đã gắn sao",
+      "external_contacts": "Liên lạc bên ngoài",
+      "search_contacts": "Tìm kiếm liên hệ",
+      "connect_phone_contacts": "Kết nối liên lạc điện thoại",
+      "join_a_channel": "Tham gia kênh",
+      "create_new_channel": "Tạo kênh mới",
+      "create_an_phone_contact": "Tạo danh bạ điện thoại",
+      "invite_contact": "Mời liên lạc",
+      "phone_contacts_matching": "Khớp Danh bạ Điện thoại",
+      "add_your_phone_number": "Thêm số điện thoại của bạn",
+      "phone_number": "Số điện thoại",
+      "continue": "Tiếp tục"
 }

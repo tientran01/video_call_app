@@ -9,16 +9,17 @@ class TeamChatPage extends BaseScreen {
 
 class TeamChatPageState extends BaseScreenState<TeamChatPage> {
   @override
-  NavigationBarItem navigationBarItem() => NavigationBarItem.teamChat;
+  ActionButtonType actionButtonType() => ActionButtonType.actionCreate;
 
   @override
-  ActionButtonType actionButtonType() => ActionButtonType.actionCreate;
+  String title() => S.current.team_chat;
 
   @override
   Widget body() {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Assets.icons.icTeamChat.image(
             width: Dimens.size100,
@@ -34,7 +35,7 @@ class TeamChatPageState extends BaseScreenState<TeamChatPage> {
             ),
           ),
           Constants.verticalBox20,
-          CustomButtom(
+          CustomButton(
             bgColor: AppColors.blue,
             title: S.current.add_contacts,
           ),

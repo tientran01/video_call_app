@@ -379,6 +379,136 @@ class S {
       args: [],
     );
   }
+
+  /// `My Contacts`
+  String get my_contacts {
+    return Intl.message(
+      'My Contacts',
+      name: 'my_contacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Starred`
+  String get starred {
+    return Intl.message(
+      'Starred',
+      name: 'starred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `External Contacts`
+  String get external_contacts {
+    return Intl.message(
+      'External Contacts',
+      name: 'external_contacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search contacts`
+  String get search_contacts {
+    return Intl.message(
+      'Search contacts',
+      name: 'search_contacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connect Phone Contacts`
+  String get connect_phone_contacts {
+    return Intl.message(
+      'Connect Phone Contacts',
+      name: 'connect_phone_contacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Join a Channel`
+  String get join_a_channel {
+    return Intl.message(
+      'Join a Channel',
+      name: 'join_a_channel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create a New Channel`
+  String get create_new_channel {
+    return Intl.message(
+      'Create a New Channel',
+      name: 'create_new_channel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create an iPhone Contact`
+  String get create_an_phone_contact {
+    return Intl.message(
+      'Create an iPhone Contact',
+      name: 'create_an_phone_contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invite a Contact`
+  String get invite_contact {
+    return Intl.message(
+      'Invite a Contact',
+      name: 'invite_contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Contacts Matching`
+  String get phone_contacts_matching {
+    return Intl.message(
+      'Phone Contacts Matching',
+      name: 'phone_contacts_matching',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add your phone number`
+  String get add_your_phone_number {
+    return Intl.message(
+      'Add your phone number',
+      name: 'add_your_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continue_ {
+    return Intl.message(
+      'Continue',
+      name: 'continue_',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

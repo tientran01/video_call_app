@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:video_call_app/components/app_colors.dart';
 import 'package:video_call_app/components/enums.dart';
-import 'package:video_call_app/configs/locale/generated/l10n.dart';
-import 'package:video_call_app/gen/assets.gen.dart';
-import 'package:video_call_app/pages/base/app_bar/app_bar_normal.dart';
+import 'package:video_call_app/pages/base/app_bar_normal.dart';
 import '../../components/dimens.dart';
+import '../widget/text_view.dart';
 
 abstract class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);
@@ -12,8 +11,6 @@ abstract class BaseScreen extends StatefulWidget {
 
 class BaseScreenState<Page extends BaseScreen> extends State<Page>
     with WidgetsBindingObserver {
-  NavigationBarItem navigationBarItem() => NavigationBarItem.meetings;
-
   ActionButtonType actionButtonType() => ActionButtonType.actionNone;
 
   LeadingButtonType leadingButtonType() => LeadingButtonType.none;
@@ -22,32 +19,6 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
 
   Widget appBarWidget() {
     throw UnimplementedError();
-  }
-
-  String appBarTitle(NavigationBarItem item) {
-    switch (item) {
-      case NavigationBarItem.meetings:
-        return S.current.meetings;
-      case NavigationBarItem.teamChat:
-        return S.current.team_chat;
-      case NavigationBarItem.contacts:
-        return S.current.contacts;
-      case NavigationBarItem.more:
-        return S.current.more;
-    }
-  }
-
-  String actionIconPath(NavigationBarItem item) {
-    switch (item) {
-      case NavigationBarItem.meetings:
-        return Assets.icons.icInfo.path;
-      case NavigationBarItem.teamChat:
-        return Assets.icons.icCreate.path;
-      case NavigationBarItem.contacts:
-        return Assets.icons.icAdd.path;
-      case NavigationBarItem.more:
-        return '';
-    }
   }
 
   String title() => '';
@@ -78,7 +49,10 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
             actionButtonType: actionButtonType(),
             leadingButtonType: leadingButtonType(),
             child: isNormalAppBar()
-                ? Text(appBarTitle(navigationBarItem()))
+                ? TextView(
+                    text: title(),
+                    fontSize: Dimens.size17,
+                  )
                 : appBarWidget(),
           ),
         ),

@@ -7,13 +7,13 @@ class CustomButtonIconWidget extends StatelessWidget {
   final String iconPath;
   final Color bgColor;
   final VoidCallback? onTap;
-  final String title;
+  final String? title;
   const CustomButtonIconWidget({
     Key? key,
     required this.iconPath,
     this.bgColor = AppColors.blue,
     this.onTap,
-    required this.title,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -42,13 +42,15 @@ class CustomButtonIconWidget extends StatelessWidget {
             ),
           ),
           Constants.verticalBox5,
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: Dimens.size15,
-              color: AppColors.oldSilver,
-            ),
-          ),
+          (title != null)
+              ? Text(
+                  title!,
+                  style: const TextStyle(
+                    fontSize: Dimens.size15,
+                    color: AppColors.oldSilver,
+                  ),
+                )
+              : Constants.emptyBox,
         ],
       ),
     );
