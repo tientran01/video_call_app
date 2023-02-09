@@ -27,5 +27,9 @@
       "personal_metting_id": "ID Cuộc họp cá nhân",
       "start_meeting": "Bắt đầu Cuộc họp",
       "send_invitaion": "Gửi lời mời",
-      "edit_meeting": "Điều chỉnh cuộc họp"
+      "edit_meeting": "Điều chỉnh cuộc họp",
+      "end": "Rời khỏi",
+      "join_audio": "Kết nối âm thanh",
+      "stop_video": "Dừng video",
+      "participant": "Người tham gia"
 }

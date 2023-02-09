@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "edit_meeting":
             MessageLookupByLibrary.simpleMessage("Điều chỉnh cuộc họp"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "end": MessageLookupByLibrary.simpleMessage("Rời khỏi"),
         "enter_your_email_address":
             MessageLookupByLibrary.simpleMessage("Nhập địa chỉ email của bạn"),
         "find_people": MessageLookupByLibrary.simpleMessage(
@@ -40,12 +41,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "get_started": MessageLookupByLibrary.simpleMessage(
             "Bắt đầu với tài khoản của bạn"),
         "join": MessageLookupByLibrary.simpleMessage("Tham gia"),
+        "join_audio": MessageLookupByLibrary.simpleMessage("Kết nối âm thanh"),
         "join_meeting":
             MessageLookupByLibrary.simpleMessage("Tham gia cuộc họp"),
         "meeting_id": MessageLookupByLibrary.simpleMessage("ID Cuộc họp"),
         "meetings": MessageLookupByLibrary.simpleMessage("Cuộc họp"),
         "more": MessageLookupByLibrary.simpleMessage("Thêm"),
         "new_meeting": MessageLookupByLibrary.simpleMessage("Cuộc họp mới"),
+        "participant": MessageLookupByLibrary.simpleMessage("Người tham gia"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "personal_metting_id":
             MessageLookupByLibrary.simpleMessage("ID Cuộc họp cá nhân"),
@@ -58,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_up": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "start_meeting":
             MessageLookupByLibrary.simpleMessage("Bắt đầu Cuộc họp"),
+        "stop_video": MessageLookupByLibrary.simpleMessage("Dừng video"),
         "team_chat": MessageLookupByLibrary.simpleMessage("Trò chuyện nhóm"),
         "welcome": MessageLookupByLibrary.simpleMessage("Chào mừng")
       };

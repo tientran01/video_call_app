@@ -1,14 +1,21 @@
-import 'package:flutter/material.dart';
-import 'package:video_call_app/components/app_colors.dart';
-import 'package:video_call_app/configs/locale/generated/l10n.dart';
-import 'package:video_call_app/gen/assets.gen.dart';
-import 'package:video_call_app/pages/meetings/widget/custom_button_icon_widget.dart';
+import 'screen.dart';
 
-class MeetingPage extends StatelessWidget {
+class MeetingPage extends BaseScreen {
   const MeetingPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  MeetingPageState createState() => MeetingPageState();
+}
+
+class MeetingPageState extends BaseScreenState<MeetingPage> {
+  @override
+  NavigationBarItem navigationBarItem() => NavigationBarItem.meetings;
+
+  @override
+  ActionButtonType actionButtonType() => ActionButtonType.actionInformation;
+
+  @override
+  Widget body() {
     return SafeArea(
       child: Column(
         children: [
@@ -19,6 +26,8 @@ class MeetingPage extends StatelessWidget {
                 iconPath: Assets.icons.icMeeting.path,
                 title: S.current.new_meeting,
                 bgColor: AppColors.beer,
+                onTap: () => NavigationService.instance
+                    .navigateToScreen(const NewMeetingPage()),
               ),
               CustomButtonIconWidget(
                 iconPath: Assets.icons.icAdd.path,
@@ -34,6 +43,33 @@ class MeetingPage extends StatelessWidget {
               ),
             ],
           ),
+          Constants.verticalBox20,
+          InkWell(
+            splashColor: Colors.transparent,
+            onTap: () {},
+            child: Container(
+              alignment: Alignment.center,
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.symmetric(
+                vertical: Dimens.size20,
+              ),
+              decoration: const BoxDecoration(
+                border: Border.symmetric(
+                  horizontal: BorderSide(
+                    color: AppColors.oldSilver,
+                    width: Dimens.size1,
+                  ),
+                ),
+              ),
+              child: Text(
+                S.current.add_a_calendar,
+                style: const TextStyle(
+                  color: AppColors.blue,
+                  fontSize: Dimens.size17,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
