@@ -9,10 +9,11 @@ class MeetingPage extends BaseScreen {
 
 class MeetingPageState extends BaseScreenState<MeetingPage> {
   @override
-  NavigationBarItem navigationBarItem() => NavigationBarItem.meetings;
-
   @override
   ActionButtonType actionButtonType() => ActionButtonType.actionInformation;
+
+  @override
+  String title() => S.current.meetings;
 
   @override
   Widget body() {
@@ -56,7 +57,7 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
               decoration: const BoxDecoration(
                 border: Border.symmetric(
                   horizontal: BorderSide(
-                    color: AppColors.oldSilver,
+                    color: AppColors.arsenic,
                     width: Dimens.size1,
                   ),
                 ),

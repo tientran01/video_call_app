@@ -15,6 +15,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_add.png
   AssetGenImage get icAdd => const AssetGenImage('assets/icons/ic_add.png');
 
+  /// File path: assets/icons/ic_add_button.png
+  AssetGenImage get icAddButton =>
+      const AssetGenImage('assets/icons/ic_add_button.png');
+
   /// File path: assets/icons/ic_calendar.png
   AssetGenImage get icCalendar =>
       const AssetGenImage('assets/icons/ic_calendar.png');
@@ -36,6 +40,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_create.png
   AssetGenImage get icCreate =>
       const AssetGenImage('assets/icons/ic_create.png');
+
+  /// File path: assets/icons/ic_down_arrow.png
+  AssetGenImage get icDownArrow =>
+      const AssetGenImage('assets/icons/ic_down_arrow.png');
 
   /// File path: assets/icons/ic_edit.png
   AssetGenImage get icEdit => const AssetGenImage('assets/icons/ic_edit.png');
@@ -60,6 +68,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_more.png
   AssetGenImage get icMore => const AssetGenImage('assets/icons/ic_more.png');
 
+  /// File path: assets/icons/ic_search.png
+  AssetGenImage get icSearch =>
+      const AssetGenImage('assets/icons/ic_search.png');
+
   /// File path: assets/icons/ic_send.png
   AssetGenImage get icSend => const AssetGenImage('assets/icons/ic_send.png');
 
@@ -71,15 +83,20 @@ class $AssetsIconsGen {
   AssetGenImage get icTeamChat =>
       const AssetGenImage('assets/icons/ic_team_chat.png');
 
+  /// File path: assets/icons/ic_user.png
+  AssetGenImage get icUser => const AssetGenImage('assets/icons/ic_user.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         icAdd,
+        icAddButton,
         icCalendar,
         icCall,
         icChangeCamera,
         icChat,
         icContact,
         icCreate,
+        icDownArrow,
         icEdit,
         icInfo,
         icLink,
@@ -87,9 +104,11 @@ class $AssetsIconsGen {
         icMic,
         icMicOff,
         icMore,
+        icSearch,
         icSend,
         icShareScreen,
-        icTeamChat
+        icTeamChat,
+        icUser
       ];
 }
 

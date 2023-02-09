@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:video_call_app/components/dimens.dart';
 
-class CustomButtom extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final String title;
   final Color bgColor;
   final double? heigth;
   final double? width;
   final Color fontColor;
   final VoidCallback? onTap;
-  const CustomButtom({
+  const CustomButton({
     Key? key,
     required this.title,
     required this.bgColor,
