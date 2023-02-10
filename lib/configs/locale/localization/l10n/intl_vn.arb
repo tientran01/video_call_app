@@ -44,5 +44,22 @@
       "phone_contacts_matching": "Khớp Danh bạ Điện thoại",
       "add_your_phone_number": "Thêm số điện thoại của bạn",
       "phone_number": "Số điện thoại",
-      "continue": "Tiếp tục"
+      "continue": "Tiếp tục",
+      "country_region_codes": "Mã quốc gia hoặc khu vực",
+      "account": "Tài khoản",
+      "display_name": "Hiển thị tên",
+      "profile_photo": "Ảnh Hồ sơ",
+      "update_password": "Cập nhật mật khẩu",
+      "sign_out": "Đăng xuất",
+      "my_profile": "Hồ sơ của Tôi",
+      "edit_name": "Chỉnh sửa tên",
+      "save": "Lưu",
+      "first_name": "Tên",
+      "last_name": "Họ",
+      "camera": "Camera",
+      "select_from_photo_album": "Chọna từ Album Ảnh",
+      "added_features": "Các tính năng đã thêm",
+      "settings": "Cài đặt",
+      "other": "Khác",
+      "no_channel": "Không có kênh nào để hiển thị"
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:video_call_app/components/app_colors.dart';
 import 'package:video_call_app/components/constants.dart';
 import 'package:video_call_app/components/dimens.dart';
+import 'package:video_call_app/pages/widget/text_view.dart';
 
 class CustomButtonIconWidget extends StatelessWidget {
   final String iconPath;
@@ -43,12 +44,10 @@ class CustomButtonIconWidget extends StatelessWidget {
           ),
           Constants.verticalBox5,
           (title != null)
-              ? Text(
-                  title!,
-                  style: const TextStyle(
-                    fontSize: Dimens.size15,
-                    color: AppColors.oldSilver,
-                  ),
+              ? TextView(
+                  text: title!,
+                  fontSize: Dimens.size13,
+                  fontColor: AppColors.oldSilver,
                 )
               : Constants.emptyBox,
         ],

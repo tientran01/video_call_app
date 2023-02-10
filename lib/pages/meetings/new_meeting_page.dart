@@ -1,8 +1,3 @@
-import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:video_call_app/pages/meetings/call_page.dart';
-
-import '../widget/text_form_field.dart';
 import 'screen.dart';
 
 class NewMeetingPage extends BaseScreen {
@@ -45,7 +40,7 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
               textInputType: TextInputType.number,
               autoFocus: true,
             ),
-            Constants.verticalBox30,
+            Constants.verticalBox10,
             CustomButton(
               title: S.current.start_meeting,
               bgColor: AppColors.blue,
@@ -68,6 +63,7 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
     if (_channelController.text.isNotEmpty) {
       await [Permission.camera, Permission.microphone].request();
       FocusManager.instance.primaryFocus?.unfocus();
+      _channelController.clear();
       NavigationService.instance.navigateToScreen(
         CallPage(
           channelName: _channelController.text,

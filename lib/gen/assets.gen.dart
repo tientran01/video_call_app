@@ -19,6 +19,17 @@ class $AssetsIconsGen {
   AssetGenImage get icAddButton =>
       const AssetGenImage('assets/icons/ic_add_button.png');
 
+  /// File path: assets/icons/ic_arrow_down.png
+  AssetGenImage get icArrowDown =>
+      const AssetGenImage('assets/icons/ic_arrow_down.png');
+
+  /// File path: assets/icons/ic_arrow_right.png
+  AssetGenImage get icArrowRight =>
+      const AssetGenImage('assets/icons/ic_arrow_right.png');
+
+  /// File path: assets/icons/ic_back.png
+  AssetGenImage get icBack => const AssetGenImage('assets/icons/ic_back.png');
+
   /// File path: assets/icons/ic_calendar.png
   AssetGenImage get icCalendar =>
       const AssetGenImage('assets/icons/ic_calendar.png');
@@ -32,6 +43,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/ic_chat.png
   AssetGenImage get icChat => const AssetGenImage('assets/icons/ic_chat.png');
+
+  /// File path: assets/icons/ic_clear.png
+  AssetGenImage get icClear => const AssetGenImage('assets/icons/ic_clear.png');
 
   /// File path: assets/icons/ic_contact.png
   AssetGenImage get icContact =>
@@ -90,10 +104,14 @@ class $AssetsIconsGen {
   List<AssetGenImage> get values => [
         icAdd,
         icAddButton,
+        icArrowDown,
+        icArrowRight,
+        icBack,
         icCalendar,
         icCall,
         icChangeCamera,
         icChat,
+        icClear,
         icContact,
         icCreate,
         icDownArrow,

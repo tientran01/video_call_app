@@ -48,6 +48,7 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
           title: AppBarNormal(
             actionButtonType: actionButtonType(),
             leadingButtonType: leadingButtonType(),
+            isShowMenuContact: isShowMenuContact(),
             child: isNormalAppBar()
                 ? TextView(
                     text: title(),
@@ -65,4 +66,6 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
   Widget body() {
     throw UnimplementedError();
   }
+
+  bool isShowMenuContact() => false;
 }

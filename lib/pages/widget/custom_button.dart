@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_call_app/components/dimens.dart';
+import 'package:video_call_app/pages/widget/text_view.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
@@ -37,13 +38,10 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         alignment: Alignment.center,
-        child: Text(
-          title,
-          style: TextStyle(
-            color: fontColor,
-            fontSize: Dimens.size15,
-            fontWeight: FontWeight.w500,
-          ),
+        child: TextView(
+          text: title.toUpperCase(),
+          fontColor: fontColor,
+          fontSize: Dimens.size15,
         ),
       ),
     );

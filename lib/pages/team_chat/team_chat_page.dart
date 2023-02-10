@@ -26,13 +26,10 @@ class TeamChatPageState extends BaseScreenState<TeamChatPage> {
             color: Colors.white,
           ),
           Constants.verticalBox30,
-          Text(
-            S.current.find_people,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: Dimens.size18,
-              fontWeight: FontWeight.w500,
-            ),
+          TextView(
+            text: S.current.find_people,
+            fontSize: Dimens.size18,
+            fontWeight: FontWeight.w500,
           ),
           Constants.verticalBox20,
           CustomButton(

@@ -7,3 +7,4 @@ export 'package:video_call_app/gen/assets.gen.dart';
 export 'package:video_call_app/pages/base/base_screen.dart';
 export '../../components/dimens.dart';
 export '../widget/custom_button.dart';
+export 'package:video_call_app/pages/widget/text_view.dart';
