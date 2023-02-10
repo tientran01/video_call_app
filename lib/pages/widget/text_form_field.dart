@@ -12,6 +12,9 @@ class CustomTextFormField extends StatelessWidget {
   final bool autoFocus;
   final bool isBorderRadius;
   final Widget? prefixIcon;
+  final Color focusBorderColor;
+  final Widget? suffixIcon;
+  final Function(String)? onChanged;
   const CustomTextFormField({
     Key? key,
     required this.textEditingController,
@@ -23,11 +26,18 @@ class CustomTextFormField extends StatelessWidget {
     this.autoFocus = false,
     this.isBorderRadius = false,
     this.prefixIcon,
+    this.focusBorderColor = AppColors.arsenic,
+    this.suffixIcon,
+    this.onChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(
+        color:
+            (fillColor == AppColors.arsenic) ? Colors.white : AppColors.arsenic,
+      ),
       keyboardType: textInputType,
       controller: textEditingController,
       autofocus: autoFocus,
@@ -49,7 +59,19 @@ class CustomTextFormField extends StatelessWidget {
         ),
         errorText: validateError ? errorText : null,
         prefixIcon: prefixIcon,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: isBorderRadius
+              ? BorderRadius.zero
+              : BorderRadius.circular(
+                  Dimens.size15,
+                ),
+          borderSide: BorderSide(
+            color: focusBorderColor,
+          ),
+        ),
+        suffixIcon: suffixIcon,
       ),
+      onChanged: onChanged,
     );
   }
 }

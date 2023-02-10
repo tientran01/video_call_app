@@ -509,6 +509,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Country or Region Codes`
+  String get country_region_codes {
+    return Intl.message(
+      'Country or Region Codes',
+      name: 'country_region_codes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Display Name`
+  String get display_name {
+    return Intl.message(
+      'Display Name',
+      name: 'display_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile Photo`
+  String get profile_photo {
+    return Intl.message(
+      'Profile Photo',
+      name: 'profile_photo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Password`
+  String get update_password {
+    return Intl.message(
+      'Update Password',
+      name: 'update_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Out`
+  String get sign_out {
+    return Intl.message(
+      'Sign Out',
+      name: 'sign_out',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Profile`
+  String get my_profile {
+    return Intl.message(
+      'My Profile',
+      name: 'my_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Name`
+  String get edit_name {
+    return Intl.message(
+      'Edit Name',
+      name: 'edit_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Name`
+  String get first_name {
+    return Intl.message(
+      'First Name',
+      name: 'first_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get last_name {
+    return Intl.message(
+      'Last Name',
+      name: 'last_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message(
+      'Camera',
+      name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select from Photo Album`
+  String get select_from_photo_album {
+    return Intl.message(
+      'Select from Photo Album',
+      name: 'select_from_photo_album',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Features`
+  String get added_features {
+    return Intl.message(
+      'Add Features',
+      name: 'added_features',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message(
+      'Other',
+      name: 'other',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No channels to show`
+  String get no_channel {
+    return Intl.message(
+      'No channels to show',
+      name: 'no_channel',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

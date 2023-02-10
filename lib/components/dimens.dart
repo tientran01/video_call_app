@@ -6,6 +6,7 @@ class Dimens {
   static const size3 = 3.0;
   static const size5 = 5.0;
   static const size10 = 10.0;
+  static const size13 = 13.0;
   static const size15 = 15.0;
   static const size17 = 17.0;
   static const size18 = 18.0;

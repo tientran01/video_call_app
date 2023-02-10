@@ -44,6 +44,22 @@
       "phone_contacts_matching": "Phone Contacts Matching",
       "add_your_phone_number": "Add your phone number",
       "phone_number": "Phone Number",
-      "continue_": "Continue"
-
+      "continue_": "Continue",
+      "country_region_codes": "Country or Region Codes",
+      "account": "Account",
+      "display_name": "Display Name",
+      "profile_photo": "Profile Photo",
+      "update_password": "Update Password",
+      "sign_out": "Sign Out",
+      "my_profile": "My Profile",
+      "edit_name": "Edit Name",
+      "save": "Save",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "camera": "Camera",
+      "select_from_photo_album": "Select from Photo Album",
+      "added_features": "Add Features",
+      "settings": "Settings",
+      "other": "Other",
+      "no_channel": "No channels to show"
 }

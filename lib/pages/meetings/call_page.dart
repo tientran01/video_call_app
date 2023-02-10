@@ -1,6 +1,3 @@
-import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:video_call_app/components/strings.dart';
-
 import 'screen.dart';
 
 class CallPage extends BaseScreen {
@@ -82,9 +79,7 @@ class CallPageState extends BaseScreenState<CallPage> {
 
   Widget _toolBar() {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: Dimens.size35,
-      ),
+      padding: Constants.edgeVertical35,
       alignment: Alignment.bottomCenter,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

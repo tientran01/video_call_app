@@ -1,22 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:video_call_app/components/app_colors.dart';
-import 'package:video_call_app/components/constants.dart';
-import 'package:video_call_app/components/dimens.dart';
-import 'package:video_call_app/components/enums.dart';
-import 'package:video_call_app/configs/locale/generated/l10n.dart';
-import 'package:video_call_app/gen/assets.gen.dart';
-import 'package:video_call_app/pages/contacts/widget/choice_action_widget.dart';
-import 'package:video_call_app/route/navigation_service.dart';
+import 'package:video_call_app/pages/contacts/screen.dart';
 
+// ignore: must_be_immutable
 class AppBarNormal extends StatelessWidget {
   final LeadingButtonType leadingButtonType;
   final ActionButtonType actionButtonType;
   final Widget child;
-  const AppBarNormal({
+  bool isShowMenuContact;
+  AppBarNormal({
     Key? key,
     this.actionButtonType = ActionButtonType.actionNone,
     this.leadingButtonType = LeadingButtonType.none,
     required this.child,
+    this.isShowMenuContact = false,
   }) : super(key: key);
 
   @override
@@ -59,6 +54,22 @@ class AppBarNormal extends StatelessWidget {
             ),
           ),
         );
+      case LeadingButtonType.backIcon:
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            IconButton(
+              focusColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              onPressed: () => NavigationService.instance.goBack(),
+              icon: Assets.icons.icBack.image(
+                width: Dimens.size25,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        );
       default:
         return Constants.emptyBox;
     }
@@ -74,17 +85,14 @@ class AppBarNormal extends StatelessWidget {
       case ActionButtonType.actionCreate:
         return _actionIcon(
           iconPath: Assets.icons.icCreate.path,
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (context) => const ChoiceActionWidget(),
-            );
-          },
+          onPressed: () {},
         );
       case ActionButtonType.actionAdd:
         return _actionIcon(
           iconPath: Assets.icons.icAddButton.path,
-          onPressed: () {},
+          onPressed: () {
+            isShowMenuContact = true;
+          },
         );
       case ActionButtonType.actionNone:
         return Constants.emptyBox;
@@ -111,12 +119,13 @@ class AppBarNormal extends StatelessWidget {
   void _showPersonalMeetingSheet(BuildContext context) {
     showModalBottomSheet(
       constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height * 1 / 2,
+        maxHeight: MediaQuery.of(context).size.height / Dimens.size2,
       ),
       backgroundColor: AppColors.eerieBlack,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(
-          Dimens.size20,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(Dimens.size20),
+          topRight: Radius.circular(Dimens.size20),
         ),
       ),
       context: context,

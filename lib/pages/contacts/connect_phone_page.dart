@@ -1,14 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:video_call_app/components/constants.dart';
-import 'package:video_call_app/components/enums.dart';
-import 'package:video_call_app/pages/base/base_screen.dart';
-import 'package:video_call_app/pages/widget/custom_button.dart';
-import 'package:video_call_app/pages/widget/text_form_field.dart';
-import 'package:video_call_app/pages/widget/text_view.dart';
+import 'package:video_call_app/pages/contacts/country_page.dart';
 
-import '../../components/app_colors.dart';
-import '../../components/dimens.dart';
-import '../../configs/locale/generated/l10n.dart';
+import 'screen.dart';
 
 class ConnectPhonePage extends BaseScreen {
   const ConnectPhonePage({Key? key}) : super(key: key);
@@ -40,20 +32,40 @@ class ConnectPhonePageState extends BaseScreenState<ConnectPhonePage> {
           ),
         ),
         SizedBox(
-          width: MediaQuery.of(context).size.width,
+          width: DeviceHelper.shared.getWidth(context),
           child: Column(
             children: [
               Container(
-                width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.symmetric(
-                  vertical: Dimens.size20,
-                ),
+                width: DeviceHelper.shared.getWidth(context),
+                padding: Constants.edgeInsetsAll20,
                 decoration: const BoxDecoration(
                   color: AppColors.arsenic,
                 ),
-                child: TextView(
-                  text: S.current.add_a_calendar,
-                  fontSize: Dimens.size15,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        onTap: () =>
+                            NavigationService.instance.navigateToScreen(
+                          const CountryPage(),
+                        ),
+                        child: Row(
+                          children: const [
+                            TextView(text: '+84'),
+                            Constants.horizontalBox10,
+                            TextView(text: 'Vietnam'),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Assets.icons.icArrowRight.image(
+                      width: Dimens.size20,
+                      color: AppColors.oldSilver,
+                    ),
+                  ],
                 ),
               ),
               Constants.verticalBox5,
@@ -68,13 +80,13 @@ class ConnectPhonePageState extends BaseScreenState<ConnectPhonePage> {
           ),
         ),
         Container(
-          width: MediaQuery.of(context).size.width,
+          width: DeviceHelper.shared.getWidth(context),
           alignment: Alignment.center,
           padding: Constants.edgeInsetsAll20,
           child: CustomButton(
             title: S.current.continue_,
             bgColor: AppColors.blue,
-            width: MediaQuery.of(context).size.width,
+            width: DeviceHelper.shared.getWidth(context),
           ),
         ),
       ],
