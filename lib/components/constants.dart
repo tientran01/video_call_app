@@ -20,6 +20,9 @@ class Constants {
   static const verticalBox50 = SizedBox(
     height: Dimens.size50,
   );
+  static const horizontalBox5 = SizedBox(
+    width: Dimens.size5,
+  );
   static const horizontalBox10 = SizedBox(
     width: Dimens.size10,
   );
