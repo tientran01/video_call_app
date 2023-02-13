@@ -16,88 +16,83 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
 
   @override
   void onTapAction() {
-    showModalBottomSheet(
-      constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height - Dimens.size20,
-      ),
-      backgroundColor: Colors.white,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(Dimens.size20),
-          topRight: Radius.circular(Dimens.size20),
+    NavigationService.instance.showBottomSheet(
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: Dimens.size10,
+          vertical: Dimens.size20,
         ),
-      ),
-      context: context,
-      builder: (context) {
-        return Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: Dimens.size10,
-            vertical: Dimens.size20,
-          ),
-          child: Column(
-            children: [
-              Column(
+        child: Column(
+          children: [
+            Column(
+              children: [
+                TextView(
+                  text: S.current.personal_metting_id,
+                  fontColor: AppColors.oldSilver,
+                  fontSize: Dimens.size18,
+                  fontWeight: FontWeight.w600,
+                ),
+                Constants.verticalBox10,
+                const TextView(
+                  text: "234 444 444",
+                  fontSize: Dimens.size25,
+                  fontWeight: FontWeight.w700,
+                ),
+              ],
+            ),
+            Constants.verticalBox20,
+            Container(
+              width: MediaQuery.of(context).size.width,
+              padding: Constants.edgeInsetsAll10,
+              decoration: BoxDecoration(
+                color: AppColors.raisinBlack,
+                borderRadius: BorderRadius.circular(
+                  Dimens.size10,
+                ),
+              ),
+              child: Column(
                 children: [
-                  TextView(
-                    text: S.current.personal_metting_id,
+                  _buildPersonalMeetingItem(
+                    () {},
+                    title: S.current.start_meeting,
+                    iconPath: Assets.icons.icCalendar.path,
                   ),
-                  Constants.verticalBox10,
-                  const TextView(
-                    text: "234 444 444",
-                    fontSize: Dimens.size35,
-                    fontWeight: FontWeight.w600,
+                  _buildPersonalMeetingItem(
+                    () {},
+                    title: S.current.send_invitaion,
+                    iconPath: Assets.icons.icSend.path,
+                  ),
+                  _buildPersonalMeetingItem(
+                    () {},
+                    title: S.current.edit_meeting,
+                    iconPath: Assets.icons.icEdit.path,
                   ),
                 ],
               ),
-              Constants.verticalBox20,
-              Container(
+            ),
+            Constants.verticalBox10,
+            InkWell(
+              splashColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () => NavigationService.instance.goBack(),
+              child: Container(
+                alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width,
                 padding: Constants.edgeInsetsAll10,
-                decoration: BoxDecoration(
-                  color: AppColors.aliceBlue,
-                  borderRadius: BorderRadius.circular(
-                    Dimens.size10,
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    _buildPersonalMeetingItem(
-                      () {},
-                      title: S.current.start_meeting,
-                      iconPath: Assets.icons.icCalendar.path,
-                    ),
-                    _buildPersonalMeetingItem(
-                      () {},
-                      title: S.current.send_invitaion,
-                      iconPath: Assets.icons.icSend.path,
-                    ),
-                    _buildPersonalMeetingItem(
-                      () {},
-                      title: S.current.edit_meeting,
-                      iconPath: Assets.icons.icEdit.path,
-                    ),
-                  ],
-                ),
-              ),
-              Constants.verticalBox10,
-              InkWell(
-                splashColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () => NavigationService.instance.goBack(),
-                child: Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width,
-                  padding: Constants.edgeInsetsAll10,
-                  child: TextView(
-                    text: S.current.cancel,
+                child: Text(
+                  S.current.cancel,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: Dimens.size17,
                   ),
                 ),
               ),
-            ],
-          ),
-        );
-      },
+            ),
+          ],
+        ),
+      ),
+      context: context,
     );
   }
 
@@ -139,6 +134,7 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
         children: [
           Constants.verticalBox20,
           Container(
+            width: DeviceHelper.shared.getWidth(context),
             margin: const EdgeInsets.symmetric(
               horizontal: Dimens.size10,
             ),

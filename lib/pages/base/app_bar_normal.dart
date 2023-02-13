@@ -22,7 +22,7 @@ class AppBarNormal extends StatelessWidget {
           child: _buildLeadingIcon(),
         ),
         Expanded(
-          flex: Dimens.size3.toInt(),
+          flex: Dimens.size4.toInt(),
           child: Center(
             child: child,
           ),
