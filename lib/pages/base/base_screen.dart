@@ -48,7 +48,7 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
           title: AppBarNormal(
             actionButtonType: actionButtonType(),
             leadingButtonType: leadingButtonType(),
-            isShowMenuContact: isShowMenuContact(),
+            onTapAction: onTapAction,
             child: isNormalAppBar()
                 ? TextView(
                     text: title(),
@@ -67,5 +67,5 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
     throw UnimplementedError();
   }
 
-  bool isShowMenuContact() => false;
+  void onTapAction() {}
 }

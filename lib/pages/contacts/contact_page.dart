@@ -14,6 +14,7 @@ class ContactPageState extends BaseScreenState<ContactPage>
   late TabController _tabController;
   TextEditingController searchEditingController = TextEditingController();
   String searchText = '';
+  bool isShowMenu = false;
 
   @override
   ActionButtonType actionButtonType() => ActionButtonType.actionAdd;
@@ -23,6 +24,13 @@ class ContactPageState extends BaseScreenState<ContactPage>
 
   @override
   String title() => S.current.contacts;
+
+  @override
+  void onTapAction() {
+    setState(() {
+      isShowMenu = !isShowMenu;
+    });
+  }
 
   @override
   void initState() {
@@ -62,20 +70,30 @@ class ContactPageState extends BaseScreenState<ContactPage>
 
   @override
   Widget body() {
-    return Stack(
-      children: [
-        TabBarView(
-          controller: _tabController,
-          children: const [
-            MyContactPage(),
-            ChannelPage(),
-          ],
-        ),
-        const Positioned(
-          right: Dimens.size15,
-          child: ChoiceActionWidget(),
-        ),
-      ],
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+        setState(() {
+          isShowMenu = false;
+        });
+      },
+      child: Stack(
+        children: [
+          TabBarView(
+            controller: _tabController,
+            children: const [
+              MyContactPage(),
+              ChannelPage(),
+            ],
+          ),
+          isShowMenu
+              ? const Positioned(
+                  right: Dimens.size15,
+                  child: ChoiceActionWidget(),
+                )
+              : Constants.emptyBox,
+        ],
+      ),
     );
   }
 }
