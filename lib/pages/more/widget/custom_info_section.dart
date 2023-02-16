@@ -17,7 +17,7 @@ class CustomInfoSection extends StatelessWidget {
         ),
         width: DeviceHelper.shared.getWidth(context),
         decoration: BoxDecoration(
-          color: AppColors.arsenic,
+          color: AppColors.brightGray,
           borderRadius: BorderRadius.circular(
             Dimens.size15,
           ),
@@ -49,14 +49,13 @@ class CustomInfoSection extends StatelessWidget {
                 children: const [
                   TextView(
                     text: "Tran Thi Anh Tien",
-                    fontSize: Dimens.size20,
                   ),
                   Constants.verticalBox5,
                   TextView(
                     text: 'anhtien@gmail.com',
-                    fontSize: Dimens.size15,
+                    fontSize: Dimens.size20,
                     fontColor: AppColors.oldSilver,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w600,
                   ),
                 ],
               ),

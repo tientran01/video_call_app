@@ -1,7 +1,6 @@
 import 'screen.dart';
 
 class MyContactPage extends StatefulWidget {
-
   const MyContactPage({Key? key}) : super(key: key);
 
   @override
@@ -23,15 +22,8 @@ class _MyContactPageState extends State<MyContactPage> {
           CustomTextFormField(
             textEditingController: searchEditingController,
             hintText: S.current.search_contacts,
-            prefixIcon: IconButton(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              onPressed: () {},
-              icon: Assets.icons.icSearch.image(
-                color: AppColors.oldSilver,
-              ),
-            ),
+            prefixWidgetType: PrefixWidgetTextField.prefixIcon,
+            iconPrefixPath: Assets.icons.icSearch.path,
             validateError: false,
             suffixIcon: (searchText.isNotEmpty ||
                     searchEditingController.text.isNotEmpty)
@@ -57,12 +49,15 @@ class _MyContactPageState extends State<MyContactPage> {
                 searchText = searchEditingController.text;
               });
             },
+            suffixWidgetType: SuffixWidgetTextField.suffixIconClear,
           ),
-          Constants.verticalBox30,
+          Constants.verticalBox10,
           TextView(
             text: S.current.my_contacts,
-            fontSize: Dimens.size25,
+            fontSize: Dimens.size20,
+            fontWeight: FontWeight.w600,
           ),
+          Constants.verticalBox10,
           InkWell(
             splashColor: Colors.transparent,
             focusColor: Colors.transparent,
@@ -76,6 +71,7 @@ class _MyContactPageState extends State<MyContactPage> {
                   iconPath: Assets.icons.icUser.path,
                   bgColor: AppColors.blue,
                 ),
+                Constants.horizontalBox10,
                 TextView(
                   text: S.current.connect_phone_contacts,
                 )

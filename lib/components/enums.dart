@@ -17,3 +17,20 @@ enum ActionButtonType {
   actionAdd,
   actionNone,
 }
+
+enum SuffixWidgetTextField {
+  suffixIconClear,
+  none,
+}
+
+enum PrefixWidgetTextField {
+  prefixIcon, 
+  prefixText,
+  none,
+}
+
+enum TypeInputTextField {
+  email, 
+  password,
+  phoneNumber,
+}

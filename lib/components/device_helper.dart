@@ -40,4 +40,12 @@ class DeviceHelper {
 
   double getWidth(BuildContext context) => MediaQuery.of(context).size.width;
   double getHeight(BuildContext context) => MediaQuery.of(context).size.height;
+
+  double getTextSize({
+    required double size,
+    required BuildContext context,
+  }) {
+    double calc = size / 10;
+    return (MediaQuery.of(context).size.height * 0.01) * calc;
+  }
 }

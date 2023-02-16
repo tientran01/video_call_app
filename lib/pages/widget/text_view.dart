@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:video_call_app/components/app_colors.dart';
+import 'package:video_call_app/components/device_helper.dart';
 
 import '../../components/dimens.dart';
 
@@ -12,9 +15,9 @@ class TextView extends StatelessWidget {
   const TextView({
     Key? key,
     required this.text,
-    this.fontSize = Dimens.size17,
-    this.fontColor = Colors.white,
-    this.fontWeight = FontWeight.w500,
+    this.fontSize = Dimens.size25,
+    this.fontColor = AppColors.arsenic,
+    this.fontWeight = FontWeight.w600,
     this.textAlign,
     this.maxLines,
   }) : super(key: key);
@@ -23,10 +26,15 @@ class TextView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        color: fontColor,
-        fontSize: fontSize,
-        fontWeight: fontWeight,
+      style: GoogleFonts.quicksand(
+        textStyle: TextStyle(
+          color: fontColor,
+          fontSize: DeviceHelper.shared.getTextSize(
+            size: fontSize,
+            context: context,
+          ),
+          fontWeight: fontWeight,
+        ),
       ),
       maxLines: maxLines,
       textAlign: textAlign,

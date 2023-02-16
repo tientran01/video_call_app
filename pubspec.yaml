@@ -41,6 +41,8 @@ dependencies:
   agora_uikit: ^1.1.2
   permission_handler: ^10.2.0
   agora_rtc_engine: ^6.1.0
+  lottie: ^2.2.0
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +73,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/json/
 
 flutter_intl:
   main_locale: en

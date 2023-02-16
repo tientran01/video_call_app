@@ -17,7 +17,7 @@ class ChoiceActionWidget extends StatelessWidget {
           Dimens.size3.toInt(),
       padding: Constants.edgeVertical10,
       decoration: BoxDecoration(
-        color: AppColors.raisinBlack,
+        color: AppColors.brightGray,
         borderRadius: BorderRadius.circular(
           Dimens.size15,
         ),
@@ -59,7 +59,6 @@ class ChoiceActionWidget extends StatelessWidget {
         padding: Constants.edgeInsetsAll15,
         child: TextView(
           text: title,
-          fontSize: Dimens.size17,
         ),
       ),
     );

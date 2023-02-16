@@ -29,20 +29,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_your_phone_number":
             MessageLookupByLibrary.simpleMessage("Add your phone number"),
         "added_features": MessageLookupByLibrary.simpleMessage("Add Features"),
+        "birth_year": MessageLookupByLibrary.simpleMessage("Birth Year"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "channel_name": MessageLookupByLibrary.simpleMessage("Channel name"),
         "channels": MessageLookupByLibrary.simpleMessage("Channels"),
+        "check_your_email_for_a_code":
+            MessageLookupByLibrary.simpleMessage("Check your email for a code"),
+        "confirm_email_msg": MessageLookupByLibrary.simpleMessage(
+            "Please enter the verification code sent to your email address"),
         "connect_phone_contacts":
             MessageLookupByLibrary.simpleMessage("Connect Phone Contacts"),
         "contacts": MessageLookupByLibrary.simpleMessage("Contacts"),
         "continue_": MessageLookupByLibrary.simpleMessage("Continue"),
+        "continue_with_facebook":
+            MessageLookupByLibrary.simpleMessage("Continue with Facebook"),
+        "continue_with_google":
+            MessageLookupByLibrary.simpleMessage("Continue with Google"),
         "country_region_codes":
             MessageLookupByLibrary.simpleMessage("Country or Region Codes"),
+        "create_account":
+            MessageLookupByLibrary.simpleMessage("Create Account"),
         "create_an_phone_contact":
             MessageLookupByLibrary.simpleMessage("Create an iPhone Contact"),
         "create_new_channel":
             MessageLookupByLibrary.simpleMessage("Create a New Channel"),
+        "did_not_get_the_code":
+            MessageLookupByLibrary.simpleMessage("Did not get the code?"),
         "display_name": MessageLookupByLibrary.simpleMessage("Display Name"),
         "edit_meeting": MessageLookupByLibrary.simpleMessage("Edit Meeting"),
         "edit_name": MessageLookupByLibrary.simpleMessage("Edit Name"),
@@ -50,13 +63,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "end": MessageLookupByLibrary.simpleMessage("End"),
         "enter_your_email_address":
             MessageLookupByLibrary.simpleMessage("Enter your email address"),
+        "enter_your_name_and_set_password":
+            MessageLookupByLibrary.simpleMessage(
+                "Enter your name and set a password"),
         "external_contacts":
             MessageLookupByLibrary.simpleMessage("External Contacts"),
         "find_people": MessageLookupByLibrary.simpleMessage(
             "Find people and start chatting!"),
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "forgot_password":
-            MessageLookupByLibrary.simpleMessage("Forgot password?"),
+            MessageLookupByLibrary.simpleMessage("Forgot password"),
         "get_started": MessageLookupByLibrary.simpleMessage(
             "Get started with your account"),
         "invite_contact":
@@ -76,6 +92,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "no_channel":
             MessageLookupByLibrary.simpleMessage("No channels to show"),
         "other": MessageLookupByLibrary.simpleMessage("Other"),
+        "other_sign_in_methods":
+            MessageLookupByLibrary.simpleMessage("Other sign in methods"),
         "participant": MessageLookupByLibrary.simpleMessage("Participants"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "personal_metting_id":
@@ -83,21 +101,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone_contacts_matching":
             MessageLookupByLibrary.simpleMessage("Phone Contacts Matching"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "please_confirm_your_birth_year": MessageLookupByLibrary.simpleMessage(
+            "Please confirm your birth year."),
         "profile_photo": MessageLookupByLibrary.simpleMessage("Profile Photo"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
+        "resend_code": MessageLookupByLibrary.simpleMessage("Resend Code"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "search_contacts":
             MessageLookupByLibrary.simpleMessage("Search contacts"),
         "select_from_photo_album":
             MessageLookupByLibrary.simpleMessage("Select from Photo Album"),
+        "select_your_sign_up_method": MessageLookupByLibrary.simpleMessage(
+            "Or select your sign up method"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
         "send_invitaion":
             MessageLookupByLibrary.simpleMessage("Send Invitation"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "share_screen": MessageLookupByLibrary.simpleMessage("Share Screen"),
-        "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_out": MessageLookupByLibrary.simpleMessage("Sign Out"),
-        "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "starred": MessageLookupByLibrary.simpleMessage("Starred"),
         "start_meeting":
             MessageLookupByLibrary.simpleMessage("Start a Meeting"),
@@ -105,6 +129,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "team_chat": MessageLookupByLibrary.simpleMessage("Team Chat"),
         "update_password":
             MessageLookupByLibrary.simpleMessage("Update Password"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verification"),
+        "verify_your_age":
+            MessageLookupByLibrary.simpleMessage("Verify your age"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome")
       };
 }

@@ -70,20 +70,20 @@ class S {
     );
   }
 
-  /// `Sign up`
+  /// `Sign Up`
   String get sign_up {
     return Intl.message(
-      'Sign up',
+      'Sign Up',
       name: 'sign_up',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign in`
+  /// `Sign In`
   String get sign_in {
     return Intl.message(
-      'Sign in',
+      'Sign In',
       name: 'sign_in',
       desc: '',
       args: [],
@@ -180,10 +180,10 @@ class S {
     );
   }
 
-  /// `Forgot password?`
+  /// `Forgot password`
   String get forgot_password {
     return Intl.message(
-      'Forgot password?',
+      'Forgot password',
       name: 'forgot_password',
       desc: '',
       args: [],
@@ -675,6 +675,156 @@ class S {
     return Intl.message(
       'No channels to show',
       name: 'no_channel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify your age`
+  String get verify_your_age {
+    return Intl.message(
+      'Verify your age',
+      name: 'verify_your_age',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Birth Year`
+  String get birth_year {
+    return Intl.message(
+      'Birth Year',
+      name: 'birth_year',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please confirm your birth year.`
+  String get please_confirm_your_birth_year {
+    return Intl.message(
+      'Please confirm your birth year.',
+      name: 'please_confirm_your_birth_year',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or select your sign up method`
+  String get select_your_sign_up_method {
+    return Intl.message(
+      'Or select your sign up method',
+      name: 'select_your_sign_up_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with Facebook`
+  String get continue_with_facebook {
+    return Intl.message(
+      'Continue with Facebook',
+      name: 'continue_with_facebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with Google`
+  String get continue_with_google {
+    return Intl.message(
+      'Continue with Google',
+      name: 'continue_with_google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other sign in methods`
+  String get other_sign_in_methods {
+    return Intl.message(
+      'Other sign in methods',
+      name: 'other_sign_in_methods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification`
+  String get verification {
+    return Intl.message(
+      'Verification',
+      name: 'verification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your email for a code`
+  String get check_your_email_for_a_code {
+    return Intl.message(
+      'Check your email for a code',
+      name: 'check_your_email_for_a_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the verification code sent to your email address`
+  String get confirm_email_msg {
+    return Intl.message(
+      'Please enter the verification code sent to your email address',
+      name: 'confirm_email_msg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend Code`
+  String get resend_code {
+    return Intl.message(
+      'Resend Code',
+      name: 'resend_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Did not get the code?`
+  String get did_not_get_the_code {
+    return Intl.message(
+      'Did not get the code?',
+      name: 'did_not_get_the_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account`
+  String get create_account {
+    return Intl.message(
+      'Create Account',
+      name: 'create_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name and set a password`
+  String get enter_your_name_and_set_password {
+    return Intl.message(
+      'Enter your name and set a password',
+      name: 'enter_your_name_and_set_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
       desc: '',
       args: [],
     );

@@ -22,13 +22,13 @@ class ConnectPhonePageState extends BaseScreenState<ConnectPhonePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Constants.verticalBox10,
+        Constants.verticalBox20,
         Padding(
-          padding: Constants.edgeInsetsAll20,
+          padding: Constants.edgeHori15Verti10,
           child: TextView(
-            text: S.current.add_your_phone_number,
+            text: S.current.add_your_phone_number.toUpperCase(),
             fontColor: AppColors.oldSilver,
-            fontSize: Dimens.size15,
+            fontSize: Dimens.size18,
           ),
         ),
         SizedBox(
@@ -37,9 +37,9 @@ class ConnectPhonePageState extends BaseScreenState<ConnectPhonePage> {
             children: [
               Container(
                 width: DeviceHelper.shared.getWidth(context),
-                padding: Constants.edgeInsetsAll20,
+                padding: Constants.edgeHori15Verti20,
                 decoration: const BoxDecoration(
-                  color: AppColors.arsenic,
+                  color: AppColors.brightGray,
                 ),
                 child: Row(
                   children: [
@@ -54,7 +54,9 @@ class ConnectPhonePageState extends BaseScreenState<ConnectPhonePage> {
                         ),
                         child: Row(
                           children: const [
-                            TextView(text: '+84'),
+                            TextView(
+                              text: '+84',
+                            ),
                             Constants.horizontalBox10,
                             TextView(text: 'Vietnam'),
                           ],
@@ -72,9 +74,10 @@ class ConnectPhonePageState extends BaseScreenState<ConnectPhonePage> {
               CustomTextFormField(
                 textEditingController: phoneEditingController,
                 hintText: S.current.phone_number,
-                textInputType: TextInputType.number,
+                typeInputTextField: TypeInputTextField.phoneNumber,
                 validateError: false,
                 isBorderRadius: true,
+                suffixWidgetType: SuffixWidgetTextField.suffixIconClear,
               ),
             ],
           ),

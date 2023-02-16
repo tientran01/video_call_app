@@ -44,7 +44,7 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
         appBar: AppBar(
           automaticallyImplyLeading: false,
           elevation: Dimens.size0,
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppColors.aliceBlue,
           title: AppBarNormal(
             actionButtonType: actionButtonType(),
             leadingButtonType: leadingButtonType(),
@@ -52,13 +52,11 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
             child: isNormalAppBar()
                 ? TextView(
                     text: title(),
-                    fontSize: Dimens.size17,
                   )
                 : appBarWidget(),
           ),
         ),
         body: body(),
-        backgroundColor: AppColors.eerieBlack,
       ),
     );
   }

@@ -37,7 +37,14 @@ class Constants {
   static const edgeVertical35 = EdgeInsets.symmetric(vertical: Dimens.size35);
   static const edgeHorizontal15 =
       EdgeInsets.symmetric(horizontal: Dimens.size15);
-
+  static const edgeHori15Verti10 = EdgeInsets.symmetric(
+    horizontal: Dimens.size15,
+    vertical: Dimens.size10,
+  );
+  static const edgeHori15Verti20 = EdgeInsets.symmetric(
+    horizontal: Dimens.size15,
+    vertical: Dimens.size20,
+  );
   static dividerCustom({
     double height = Dimens.size1,
     Color color = AppColors.oldSilver,
