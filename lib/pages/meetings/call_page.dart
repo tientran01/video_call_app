@@ -1,8 +1,12 @@
+// ignore_for_file: library_prefixes
+
+import 'package:agora_rtc_engine/rtc_engine.dart';
+import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'screen.dart';
 
 class CallPage extends BaseScreen {
   final String channelName;
-  final ClientRoleType clientRoleType;
+  final ClientRole clientRoleType;
   const CallPage({
     Key? key,
     required this.channelName,
@@ -30,6 +34,7 @@ class CallPageState extends BaseScreenState<CallPage> {
   void dispose() {
     _users.clear();
     rtcEngine.leaveChannel();
+    rtcEngine.destroy();
     super.dispose();
   }
 
@@ -40,44 +45,83 @@ class CallPageState extends BaseScreenState<CallPage> {
       });
       return;
     }
-    rtcEngine = createAgoraRtcEngine();
+    rtcEngine = await RtcEngine.create(Strings.appID);
     await rtcEngine.enableVideo();
-    await rtcEngine
-        .setChannelProfile(ChannelProfileType.channelProfileLiveBroadcasting);
-    await rtcEngine.setClientRole(role: widget.clientRoleType);
-    VideoEncoderConfiguration videoEncoderConfiguration =
-        const VideoEncoderConfiguration();
-    // videoEncoderConfiguration.dimensions = const VideoDimensions(width: 1920, height: 1080,);
-    rtcEngine.setVideoEncoderConfiguration(videoEncoderConfiguration);
-    rtcEngine.joinChannel(
-      token: Strings.token,
-      channelId: widget.channelName,
-      uid: 0,
-      options: const ChannelMediaOptions(),
+    await rtcEngine.setChannelProfile(ChannelProfile.LiveBroadcasting);
+    await rtcEngine.setClientRole(widget.clientRoleType);
+    _addAgoraEventHandle();
+    VideoEncoderConfiguration configuration = VideoEncoderConfiguration();
+    await rtcEngine.setVideoEncoderConfiguration(configuration);
+    await rtcEngine.joinChannel(Strings.token, widget.channelName, null, 0);
+  }
+
+  void _addAgoraEventHandle() {
+    rtcEngine.setEventHandler(
+      RtcEngineEventHandler(
+        joinChannelSuccess: (channel, uid, elapsed) {
+          setState(() {
+            final info = "Join channel $channel, uid: $uid";
+            _infoString.add(info);
+          });
+        },
+        leaveChannel: (stats) {
+          setState(() {
+            _infoString.add("Leave Channel");
+            _users.clear();
+          });
+        },
+        userJoined: (uid, elapsed) {
+          final info = "User joined: $uid";
+          _infoString.add(info);
+          _users.add(uid);
+        },
+        userOffline: (uid, reason) {
+          setState(() {
+            final info = 'User offline: $uid';
+            _infoString.add(info);
+            _users.remove(uid);
+          });
+        },
+      ),
     );
   }
 
-  void _handleAgoraEvent() {
-    rtcEngine.registerEventHandler(
-      RtcEngineEventHandler(onJoinChannelSuccess: (connection, elapsed) {
-        setState(() {
-          _infoString.add(
-              "Join channel ${connection.channelId}, uid: ${connection.localUid}");
-        });
-      }, onLeaveChannel: ((connection, stats) {
-        setState(() {});
-      })),
+  Widget _viewRow() {
+    final List<StatefulWidget> list = [];
+    if (widget.clientRoleType == ClientRole.Broadcaster) {
+      list.add(const RtcLocalView.SurfaceView());
+    }
+    for (var uid in _users) {
+      list.add(RtcLocalView.SurfaceView(
+        channelId: widget.channelName,
+        
+      ));
+    }
+    final views = list;
+    return Column(
+      children: List.generate(
+        views.length,
+        (index) => Expanded(
+          child: views[index],
+        ),
+      ),
     );
   }
 
   @override
   Widget body() {
     return Center(
-      child: _toolBar(),
+      child: Stack(
+        children: [
+          _viewRow(),
+          _toolBar(),
+        ],
+      ),
     );
   }
 
   Widget _toolBar() {
+    if (widget.clientRoleType == ClientRole.Audience) return Constants.emptyBox;
     return Container(
       padding: Constants.edgeVertical35,
       alignment: Alignment.bottomCenter,

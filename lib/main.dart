@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const OnBoardPage(),
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
       navigatorKey: NavigationService.instance.navigationKey,
       localizationsDelegates: const [

@@ -37,9 +37,9 @@ class _MyContactPageState extends State<MyContactPage> {
                         searchText = Strings.splash;
                       });
                     },
-                    icon: Assets.icons.icClear.image(
-                      color: AppColors.oldSilver,
-                      width: Dimens.size25,
+                    icon: Assets.icons.icCancel.image(
+                      color: AppColors.oldSilver.withOpacity(Dimens.opacity4),
+                      width: Dimens.size20,
                     ),
                   )
                 : Constants.emptyBox,
@@ -51,10 +51,10 @@ class _MyContactPageState extends State<MyContactPage> {
             },
             suffixWidgetType: SuffixWidgetTextField.suffixIconClear,
           ),
-          Constants.verticalBox10,
+          Constants.verticalBox20,
           TextView(
             text: S.current.my_contacts,
-            fontSize: Dimens.size20,
+            fontSize: Dimens.size30,
             fontWeight: FontWeight.w600,
           ),
           Constants.verticalBox10,
