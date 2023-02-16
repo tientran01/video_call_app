@@ -37,7 +37,7 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
               hintText: S.current.meeting_id,
               errorText: "Channel name is Tieng",
               validateError: _validateError,
-              textInputType: TextInputType.number,
+              typeInputTextField: TypeInputTextField.phoneNumber,
               autoFocus: true,
             ),
             Constants.verticalBox10,

@@ -29,19 +29,32 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Thêm số điện thoại của bạn"),
         "added_features":
             MessageLookupByLibrary.simpleMessage("Các tính năng đã thêm"),
+        "birth_year": MessageLookupByLibrary.simpleMessage("Năm sinh"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "channel_name": MessageLookupByLibrary.simpleMessage("Tên kênh"),
         "channels": MessageLookupByLibrary.simpleMessage("Kênh"),
+        "check_your_email_for_a_code":
+            MessageLookupByLibrary.simpleMessage("Check your email for a code"),
+        "confirm_email_msg": MessageLookupByLibrary.simpleMessage(
+            "Please enter the verification code sent to your email address"),
         "connect_phone_contacts":
             MessageLookupByLibrary.simpleMessage("Kết nối liên lạc điện thoại"),
         "contacts": MessageLookupByLibrary.simpleMessage("Liên lạc"),
+        "continue_with_facebook":
+            MessageLookupByLibrary.simpleMessage("Tiếp tục với Facebook"),
+        "continue_with_google":
+            MessageLookupByLibrary.simpleMessage("Tiếp tục với Google"),
         "country_region_codes":
             MessageLookupByLibrary.simpleMessage("Mã quốc gia hoặc khu vực"),
+        "create_account":
+            MessageLookupByLibrary.simpleMessage("Create Account"),
         "create_an_phone_contact":
             MessageLookupByLibrary.simpleMessage("Tạo danh bạ điện thoại"),
         "create_new_channel":
             MessageLookupByLibrary.simpleMessage("Tạo kênh mới"),
+        "did_not_get_the_code":
+            MessageLookupByLibrary.simpleMessage("Did not get the code?"),
         "display_name": MessageLookupByLibrary.simpleMessage("Hiển thị tên"),
         "edit_meeting":
             MessageLookupByLibrary.simpleMessage("Điều chỉnh cuộc họp"),
@@ -50,13 +63,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "end": MessageLookupByLibrary.simpleMessage("Rời khỏi"),
         "enter_your_email_address":
             MessageLookupByLibrary.simpleMessage("Nhập địa chỉ email của bạn"),
+        "enter_your_name_and_set_password":
+            MessageLookupByLibrary.simpleMessage(
+                "Enter your name and set a password"),
         "external_contacts":
             MessageLookupByLibrary.simpleMessage("Liên lạc bên ngoài"),
         "find_people": MessageLookupByLibrary.simpleMessage(
             "Tìm người và bắt đầu trò chuyện!"),
-        "first_name": MessageLookupByLibrary.simpleMessage("Tên"),
+        "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "forgot_password":
-            MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
+            MessageLookupByLibrary.simpleMessage("Quên mật khẩu"),
         "get_started": MessageLookupByLibrary.simpleMessage(
             "Bắt đầu với tài khoản của bạn"),
         "invite_contact": MessageLookupByLibrary.simpleMessage("Mời liên lạc"),
@@ -65,7 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "join_audio": MessageLookupByLibrary.simpleMessage("Kết nối âm thanh"),
         "join_meeting":
             MessageLookupByLibrary.simpleMessage("Tham gia cuộc họp"),
-        "last_name": MessageLookupByLibrary.simpleMessage("Họ"),
+        "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
         "meeting_id": MessageLookupByLibrary.simpleMessage("ID Cuộc họp"),
         "meetings": MessageLookupByLibrary.simpleMessage("Cuộc họp"),
         "more": MessageLookupByLibrary.simpleMessage("Thêm"),
@@ -75,6 +91,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "no_channel": MessageLookupByLibrary.simpleMessage(
             "Không có kênh nào để hiển thị"),
         "other": MessageLookupByLibrary.simpleMessage("Khác"),
+        "other_sign_in_methods":
+            MessageLookupByLibrary.simpleMessage("Phương thức đăng nhập khác"),
         "participant": MessageLookupByLibrary.simpleMessage("Người tham gia"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "personal_metting_id":
@@ -82,14 +100,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone_contacts_matching":
             MessageLookupByLibrary.simpleMessage("Khớp Danh bạ Điện thoại"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "please_confirm_your_birth_year": MessageLookupByLibrary.simpleMessage(
+            "Vui lòng xác nhận năm sinh của bạn."),
         "profile_photo": MessageLookupByLibrary.simpleMessage("Ảnh Hồ sơ"),
         "required": MessageLookupByLibrary.simpleMessage("Bắt buộc"),
+        "resend_code": MessageLookupByLibrary.simpleMessage("Resend Code"),
         "save": MessageLookupByLibrary.simpleMessage("Lưu"),
         "schedule": MessageLookupByLibrary.simpleMessage("Lên lịch"),
         "search_contacts":
             MessageLookupByLibrary.simpleMessage("Tìm kiếm liên hệ"),
         "select_from_photo_album":
             MessageLookupByLibrary.simpleMessage("Chọna từ Album Ảnh"),
+        "select_your_sign_up_method": MessageLookupByLibrary.simpleMessage(
+            "Hoặc chọn phương thức đăng kí của bạn"),
+        "send": MessageLookupByLibrary.simpleMessage("Gửi"),
         "send_invitaion": MessageLookupByLibrary.simpleMessage("Gửi lời mời"),
         "settings": MessageLookupByLibrary.simpleMessage("Cài đặt"),
         "share_screen":
@@ -104,6 +128,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "team_chat": MessageLookupByLibrary.simpleMessage("Trò chuyện nhóm"),
         "update_password":
             MessageLookupByLibrary.simpleMessage("Cập nhật mật khẩu"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verification"),
+        "verify_your_age":
+            MessageLookupByLibrary.simpleMessage("Xác minh tuổi của bạn"),
         "welcome": MessageLookupByLibrary.simpleMessage("Chào mừng")
       };
 }

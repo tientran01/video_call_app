@@ -18,9 +18,9 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
   void onTapAction() {
     showModalBottomSheet(
       constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height / Dimens.size2,
+        maxHeight: MediaQuery.of(context).size.height - Dimens.size20,
       ),
-      backgroundColor: AppColors.eerieBlack,
+      backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(Dimens.size20),
@@ -38,21 +38,14 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
             children: [
               Column(
                 children: [
-                  Text(
-                    S.current.personal_metting_id,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: Dimens.size20,
-                    ),
+                  TextView(
+                    text: S.current.personal_metting_id,
                   ),
                   Constants.verticalBox10,
-                  const Text(
-                    "234 444 444",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: Dimens.size25,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  const TextView(
+                    text: "234 444 444",
+                    fontSize: Dimens.size35,
+                    fontWeight: FontWeight.w600,
                   ),
                 ],
               ),
@@ -61,7 +54,7 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
                 width: MediaQuery.of(context).size.width,
                 padding: Constants.edgeInsetsAll10,
                 decoration: BoxDecoration(
-                  color: AppColors.raisinBlack,
+                  color: AppColors.aliceBlue,
                   borderRadius: BorderRadius.circular(
                     Dimens.size10,
                   ),
@@ -96,12 +89,8 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width,
                   padding: Constants.edgeInsetsAll10,
-                  child: Text(
-                    S.current.cancel,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: Dimens.size17,
-                    ),
+                  child: TextView(
+                    text: S.current.cancel,
                   ),
                 ),
               ),
@@ -123,12 +112,8 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
         children: [
           Expanded(
             flex: Dimens.size3.toInt(),
-            child: Text(
-              title,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: Dimens.size18,
-              ),
+            child: TextView(
+              text: title,
             ),
           ),
           Expanded(
@@ -138,7 +123,7 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
               icon: Image.asset(
                 iconPath,
                 width: Dimens.size25,
-                color: Colors.white,
+                color: AppColors.arsenic,
               ),
             ),
           ),
@@ -152,13 +137,18 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
     return SafeArea(
       child: Column(
         children: [
+          Constants.verticalBox20,
           Container(
             margin: const EdgeInsets.symmetric(
               horizontal: Dimens.size10,
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                CustomButtonIconWidget(
+                  iconPath: Assets.icons.icAdd.path,
+                  title: S.current.join,
+                ),
                 CustomButtonIconWidget(
                   iconPath: Assets.icons.icMeeting.path,
                   title: S.current.new_meeting,
@@ -166,10 +156,6 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
                   onTap: () => NavigationService.instance.navigateToScreen(
                     const NewMeetingPage(),
                   ),
-                ),
-                CustomButtonIconWidget(
-                  iconPath: Assets.icons.icAdd.path,
-                  title: S.current.join,
                 ),
                 CustomButtonIconWidget(
                   iconPath: Assets.icons.icCalendar.path,
@@ -193,7 +179,7 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
               decoration: const BoxDecoration(
                 border: Border.symmetric(
                   horizontal: BorderSide(
-                    color: AppColors.arsenic,
+                    color: AppColors.aliceBlue,
                     width: Dimens.size1,
                   ),
                 ),

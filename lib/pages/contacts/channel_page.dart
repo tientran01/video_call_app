@@ -9,7 +9,6 @@ class ChannelPage extends StatelessWidget {
       child: TextView(
         text: S.current.no_channel,
         fontColor: AppColors.oldSilver,
-        fontSize: Dimens.size17,
       ),
     );
   }

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:video_call_app/components/app_colors.dart';
+import 'package:video_call_app/components/constants.dart';
+import 'package:video_call_app/components/device_helper.dart';
 import 'package:video_call_app/components/dimens.dart';
+import 'package:video_call_app/components/strings.dart';
 import 'package:video_call_app/pages/widget/text_view.dart';
 
 class CustomButton extends StatelessWidget {
@@ -9,14 +13,20 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final Color fontColor;
   final VoidCallback? onTap;
+  final bool enableButton;
+  final bool icon;
+  final String? iconPath;
   const CustomButton({
     Key? key,
     required this.title,
-    required this.bgColor,
+    this.bgColor = AppColors.blue,
     this.heigth = Dimens.size60,
-    this.width = Dimens.size200,
+    this.width,
     this.fontColor = Colors.white,
     this.onTap,
+    this.enableButton = true,
+    this.icon = false,
+    this.iconPath,
   }) : super(key: key);
 
   @override
@@ -30,7 +40,7 @@ class CustomButton extends StatelessWidget {
           vertical: Dimens.size15,
         ),
         height: heigth,
-        width: width,
+        width: width ?? DeviceHelper.shared.getWidth(context),
         decoration: BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.circular(
@@ -38,10 +48,22 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         alignment: Alignment.center,
-        child: TextView(
-          text: title.toUpperCase(),
-          fontColor: fontColor,
-          fontSize: Dimens.size15,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon
+                ? Image.asset(
+                    iconPath ?? Strings.splash,
+                    width: Dimens.size25,
+                  )
+                : Constants.emptyBox,
+            icon ? Constants.horizontalBox5 : Constants.emptyBox,
+            TextView(
+              text: title,
+              fontColor: fontColor,
+              fontWeight: FontWeight.w700,
+            ),
+          ],
         ),
       ),
     );

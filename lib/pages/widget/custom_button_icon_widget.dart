@@ -19,39 +19,36 @@ class CustomButtonIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: Constants.edgeInsetsAll10,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          InkWell(
-            highlightColor: Colors.transparent,
-            onTap: onTap,
-            child: Container(
-              padding: Constants.edgeInsetsAll15,
-              decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: BorderRadius.circular(
-                  Dimens.size20,
-                ),
-              ),
-              child: Image.asset(
-                iconPath,
-                width: Dimens.size30,
-                color: Colors.white,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        InkWell(
+          highlightColor: Colors.transparent,
+          onTap: onTap,
+          child: Container(
+            padding: Constants.edgeInsetsAll15,
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: BorderRadius.circular(
+                Dimens.size20,
               ),
             ),
+            child: Image.asset(
+              iconPath,
+              width: Dimens.size30,
+              color: Colors.white,
+            ),
           ),
-          Constants.verticalBox5,
-          (title != null)
-              ? TextView(
-                  text: title!,
-                  fontSize: Dimens.size13,
-                  fontColor: AppColors.oldSilver,
-                )
-              : Constants.emptyBox,
-        ],
-      ),
+        ),
+        Constants.verticalBox5,
+        (title != null)
+            ? TextView(
+                text: title!,
+                fontSize: Dimens.size20,
+                fontColor: AppColors.oldSilver,
+              )
+            : Constants.emptyBox,
+      ],
     );
   }
 }

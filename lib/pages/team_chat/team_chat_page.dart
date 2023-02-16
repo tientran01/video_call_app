@@ -16,19 +16,19 @@ class TeamChatPageState extends BaseScreenState<TeamChatPage> {
 
   @override
   Widget body() {
-    return Center(
+    return Container(
+      padding: Constants.edgeInsetsAll10,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Assets.icons.icTeamChat.image(
             width: Dimens.size100,
-            color: Colors.white,
+            color: AppColors.arsenic,
           ),
           Constants.verticalBox30,
           TextView(
             text: S.current.find_people,
-            fontSize: Dimens.size18,
             fontWeight: FontWeight.w500,
           ),
           Constants.verticalBox20,

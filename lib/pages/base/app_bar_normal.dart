@@ -31,7 +31,7 @@ class AppBarNormal extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              _buildActionIcon(context),
+              _buildActionIcon,
             ],
           ),
         ),
@@ -47,11 +47,9 @@ class AppBarNormal extends StatelessWidget {
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () => NavigationService.instance.goBack(),
-          child: Text(
-            S.current.cancel,
-            style: const TextStyle(
-              fontSize: Dimens.size17,
-            ),
+          child: TextView(
+            text: S.current.cancel,
+            fontColor: AppColors.blue,
           ),
         );
       case LeadingButtonType.backIcon:
@@ -65,7 +63,7 @@ class AppBarNormal extends StatelessWidget {
               onPressed: () => NavigationService.instance.goBack(),
               icon: Assets.icons.icBack.image(
                 width: Dimens.size25,
-                color: Colors.white,
+                color: AppColors.blue,
               ),
             ),
           ],
@@ -75,7 +73,7 @@ class AppBarNormal extends StatelessWidget {
     }
   }
 
-  Widget _buildActionIcon(BuildContext context) {
+  Widget get _buildActionIcon {
     switch (actionButtonType) {
       case ActionButtonType.actionInformation:
         return _actionIcon(
@@ -109,7 +107,7 @@ class AppBarNormal extends StatelessWidget {
       icon: Image.asset(
         iconPath,
         width: Dimens.size25,
-        color: Colors.white,
+        color: AppColors.arsenic,
       ),
     );
   }

@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final _selectedItemColor = Colors.white;
+  final _selectedItemColor = AppColors.blue;
   final _unselectedItemColor = AppColors.oldSilver;
 
   final _buildBody = const <Widget>[
@@ -36,7 +36,16 @@ class _HomePageState extends State<HomePage> {
           highlightColor: Colors.transparent,
           focusColor: Colors.transparent,
         ),
-        child: _bottomNavigationBar(),
+        child: Container(
+          decoration: const BoxDecoration(
+            border: Border(
+              top: BorderSide(
+                color: AppColors.aliceBlue,
+              ),
+            ),
+          ),
+          child: _bottomNavigationBar(),
+        ),
       ),
     );
   }
@@ -51,9 +60,8 @@ class _HomePageState extends State<HomePage> {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
       onTap: onTabTapped,
-      selectedItemColor: Colors.white,
+      selectedItemColor: AppColors.blue,
       unselectedItemColor: AppColors.oldSilver,
-      backgroundColor: Colors.black,
       elevation: Dimens.size0,
       type: BottomNavigationBarType.fixed,
       showUnselectedLabels: true,

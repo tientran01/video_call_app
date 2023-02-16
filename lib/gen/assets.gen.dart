@@ -37,6 +37,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_call.png
   AssetGenImage get icCall => const AssetGenImage('assets/icons/ic_call.png');
 
+  /// File path: assets/icons/ic_cancel.png
+  AssetGenImage get icCancel =>
+      const AssetGenImage('assets/icons/ic_cancel.png');
+
   /// File path: assets/icons/ic_change_camera.png
   AssetGenImage get icChangeCamera =>
       const AssetGenImage('assets/icons/ic_change_camera.png');
@@ -61,6 +65,14 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/ic_edit.png
   AssetGenImage get icEdit => const AssetGenImage('assets/icons/ic_edit.png');
+
+  /// File path: assets/icons/ic_facebook.png
+  AssetGenImage get icFacebook =>
+      const AssetGenImage('assets/icons/ic_facebook.png');
+
+  /// File path: assets/icons/ic_google.png
+  AssetGenImage get icGoogle =>
+      const AssetGenImage('assets/icons/ic_google.png');
 
   /// File path: assets/icons/ic_info.png
   AssetGenImage get icInfo => const AssetGenImage('assets/icons/ic_info.png');
@@ -109,6 +121,7 @@ class $AssetsIconsGen {
         icBack,
         icCalendar,
         icCall,
+        icCancel,
         icChangeCamera,
         icChat,
         icClear,
@@ -116,6 +129,8 @@ class $AssetsIconsGen {
         icCreate,
         icDownArrow,
         icEdit,
+        icFacebook,
+        icGoogle,
         icInfo,
         icLink,
         icMeeting,
@@ -130,10 +145,21 @@ class $AssetsIconsGen {
       ];
 }
 
+class $AssetsJsonGen {
+  const $AssetsJsonGen();
+
+  /// File path: assets/json/meeting.json
+  String get meeting => 'assets/json/meeting.json';
+
+  /// List of all assets
+  List<String> get values => [meeting];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsJsonGen json = $AssetsJsonGen();
 }
 
 class AssetGenImage {

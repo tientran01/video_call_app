@@ -7,4 +7,6 @@ class AppColors {
   static const Color oldSilver = Color(0xFF7F8487);
   static const Color raisinBlack = Color(0xFF232323);
   static const Color eerieBlack = Color(0xFF191919);
+  static const Color aliceBlue = Color(0xFFECF2FF);
+  static const Color brightGray = Color(0xFFEEEEEE);
 }

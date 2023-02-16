@@ -1,4 +1,5 @@
 class Dimens {
+  static const opacity2 = 0.2;
   static const opacity4 = 0.4;
   static const size0 = 0.0;
   static const size1 = 1.0;
@@ -6,11 +7,14 @@ class Dimens {
   static const size3 = 3.0;
   static const size5 = 5.0;
   static const size10 = 10.0;
+  static const size12 = 12.0;
   static const size13 = 13.0;
   static const size15 = 15.0;
+  static const size16 = 16.0;
   static const size17 = 17.0;
   static const size18 = 18.0;
   static const size20 = 20.0;
+  static const size23 = 23.0;
   static const size25 = 25.0;
   static const size30 = 30.0;
   static const size35 = 35.0;
