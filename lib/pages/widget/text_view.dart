@@ -15,7 +15,7 @@ class TextView extends StatelessWidget {
   const TextView({
     Key? key,
     required this.text,
-    this.fontSize = Dimens.size25,
+    this.fontSize = Dimens.size23,
     this.fontColor = AppColors.arsenic,
     this.fontWeight = FontWeight.w600,
     this.textAlign,
@@ -30,7 +30,7 @@ class TextView extends StatelessWidget {
         textStyle: TextStyle(
           color: fontColor,
           fontSize: DeviceHelper.shared.getTextSize(
-            size: fontSize,
+            fontSize: fontSize,
             context: context,
           ),
           fontWeight: fontWeight,

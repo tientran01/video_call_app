@@ -64,6 +64,10 @@ class ContactPageState extends BaseScreenState<ContactPage>
           ),
           labelStyle: GoogleFonts.quicksand(
             fontWeight: FontWeight.w600,
+            fontSize: DeviceHelper.shared.getTextSize(
+              fontSize: Dimens.size20,
+              context: context,
+            ),
           ),
           tabs: [
             Tab(

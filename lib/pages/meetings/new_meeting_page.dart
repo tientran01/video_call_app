@@ -12,7 +12,6 @@ class NewMeetingPage extends BaseScreen {
 
 class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
   final _channelController = TextEditingController();
-  bool _validateError = false;
   ClientRole clientRoleType = ClientRole.Broadcaster;
 
   @override
@@ -39,9 +38,10 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
               fillColor: Colors.grey.shade300,
               hintText: S.current.meeting_id,
               errorText: "Channel name is Tieng",
-              validateError: _validateError,
               typeInputTextField: TypeInputTextField.phoneNumber,
               autoFocus: true,
+              prefixWidgetType: PrefixWidgetTextField.prefixIcon,
+              iconPrefixPath: Assets.icons.icLink.path,
             ),
             Constants.verticalBox10,
             NoSplashWidget(
@@ -89,11 +89,6 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
   }
 
   Future<void> onJoin() async {
-    setState(() {
-      _channelController.text.isEmpty
-          ? (_validateError = true)
-          : (_validateError = false);
-    });
     if (_channelController.text.isNotEmpty) {
       await [Permission.camera, Permission.microphone].request();
       FocusManager.instance.primaryFocus?.unfocus();

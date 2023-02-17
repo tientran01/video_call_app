@@ -10,8 +10,8 @@ class ForgotPasswordPage extends BaseScreen {
 }
 
 class ForgotPasswordPageState extends BaseScreenState<ForgotPasswordPage> {
-  TextEditingController _emailController = TextEditingController();
-  String _emailValue = Strings.splash;
+  final TextEditingController _emailController = TextEditingController();
+  String _emailValue = Strings.empty;
   @override
   String title() => S.current.forgot_password;
 
@@ -28,10 +28,11 @@ class ForgotPasswordPageState extends BaseScreenState<ForgotPasswordPage> {
             TextView(
               text: S.current.enter_your_email_address.toUpperCase(),
               fontColor: AppColors.oldSilver,
-              fontSize: Dimens.size20,
+              fontSize: Dimens.size18,
             ),
             Constants.verticalBox10,
             CustomTextFormField(
+              typeInputTextField: TypeInputTextField.email,
               textEditingController: _emailController,
               hintText: 'example@gmail.com',
               prefixWidgetType: PrefixWidgetTextField.prefixText,
@@ -52,7 +53,7 @@ class ForgotPasswordPageState extends BaseScreenState<ForgotPasswordPage> {
                       onPressed: () {
                         _emailController.clear();
                         setState(() {
-                          _emailValue = Strings.splash;
+                          _emailValue = Strings.empty;
                         });
                       },
                       icon: Assets.icons.icCancel.image(

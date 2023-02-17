@@ -75,7 +75,6 @@ class ConnectPhonePageState extends BaseScreenState<ConnectPhonePage> {
                 textEditingController: phoneEditingController,
                 hintText: S.current.phone_number,
                 typeInputTextField: TypeInputTextField.phoneNumber,
-                validateError: false,
                 isBorderRadius: true,
                 suffixWidgetType: SuffixWidgetTextField.suffixIconClear,
               ),

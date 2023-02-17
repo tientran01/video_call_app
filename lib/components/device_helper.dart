@@ -42,10 +42,10 @@ class DeviceHelper {
   double getHeight(BuildContext context) => MediaQuery.of(context).size.height;
 
   double getTextSize({
-    required double size,
+    required double fontSize,
     required BuildContext context,
   }) {
-    double calc = size / 10;
+    double calc = fontSize / Dimens.size10;
     return (MediaQuery.of(context).size.height * 0.01) * calc;
   }
 }

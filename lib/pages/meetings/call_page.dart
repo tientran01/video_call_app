@@ -91,12 +91,12 @@ class CallPageState extends BaseScreenState<CallPage> {
     if (widget.clientRoleType == ClientRole.Broadcaster) {
       list.add(const RtcLocalView.SurfaceView());
     }
-    for (var uid in _users) {
-      list.add(RtcLocalView.SurfaceView(
-        channelId: widget.channelName,
+    // for (var uid in _users) {
+    //   list.add(RtcLocalView.SurfaceView(
+    //     channelId: widget.channelName,
         
-      ));
-    }
+    //   ));
+    // }
     final views = list;
     return Column(
       children: List.generate(

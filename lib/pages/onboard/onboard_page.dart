@@ -1,5 +1,6 @@
 import 'package:lottie/lottie.dart';
 import 'package:video_call_app/components/device_helper.dart';
+import 'package:video_call_app/pages/meetings/new_meeting_page.dart';
 import 'package:video_call_app/pages/sign_in/sign_in_page.dart';
 import 'package:video_call_app/pages/sign_up/sign_up_page.dart';
 import 'package:video_call_app/pages/team_chat/screen.dart';
@@ -63,6 +64,9 @@ class _OnBoardPageState extends State<OnBoardPage> {
                     CustomButton(
                       title: S.current.join_meeting,
                       bgColor: AppColors.blue,
+                      onTap: () => NavigationService.instance.navigateToScreen(
+                        const NewMeetingPage(),
+                      ),
                     ),
                     Constants.verticalBox10,
                     CustomButton(
@@ -82,6 +86,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
                         const SignUpPage(),
                       ),
                     ),
+                    Constants.verticalBox20,
                   ],
                 ),
               ),
