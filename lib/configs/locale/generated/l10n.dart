@@ -829,6 +829,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Password must be at least 8 characters, including at least 1 letter and 1 number.`
+  String get password_invalid {
+    return Intl.message(
+      'Password must be at least 8 characters, including at least 1 letter and 1 number.',
+      name: 'password_invalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email address.`
+  String get email_invalid {
+    return Intl.message(
+      'Please enter a valid email address.',
+      name: 'email_invalid',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

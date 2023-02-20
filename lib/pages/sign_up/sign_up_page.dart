@@ -1,9 +1,4 @@
-import 'package:video_call_app/components/device_helper.dart';
-import 'package:video_call_app/components/strings.dart';
-import 'package:video_call_app/pages/sign_up/confirm_email_page.dart';
-import 'package:video_call_app/pages/team_chat/screen.dart';
-import 'package:video_call_app/pages/widget/text_form_field.dart';
-import 'package:video_call_app/route/navigation_service.dart';
+import 'package:video_call_app/helper/helper_utils.dart';
 
 import 'screen.dart';
 
@@ -15,11 +10,21 @@ class SignUpPage extends BaseScreen {
 }
 
 class SignUpPageState extends BaseScreenState<SignUpPage> {
+  final TextEditingController _birthController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
   @override
   LeadingButtonType leadingButtonType() => LeadingButtonType.backText;
 
   @override
   String title() => S.current.sign_up;
+
+  @override
+  void dispose() {
+    _birthController.dispose();
+    super.dispose();
+  }
+
+  bool get checkValid => _formKey.currentState!.validate();
 
   @override
   Widget body() => Padding(
@@ -29,30 +34,36 @@ class SignUpPageState extends BaseScreenState<SignUpPage> {
           children: [
             TextView(
               text: S.current.verify_your_age.toUpperCase(),
-              fontSize: Dimens.size20,
-            ),
-            Constants.verticalBox10,
-            CustomTextFormField(
-              textEditingController: TextEditingController(),
-              hintText: Strings.splash,
-              prefixWidgetType: PrefixWidgetTextField.prefixText,
-              textPrefix: S.current.birth_year,
-              typeInputTextField: TypeInputTextField.phoneNumber,
-            ),
-            Constants.verticalBox10,
-            TextView(
-              text: S.current.please_confirm_your_birth_year,
-              fontSize: Dimens.size20,
               fontColor: AppColors.oldSilver,
+              fontSize: Dimens.size18,
+            ),
+            Constants.verticalBox10,
+            Form(
+              key: _formKey,
+              child: CustomTextFormField(
+                textEditingController: _birthController,
+                hintText: Strings.empty,
+                prefixWidgetType: PrefixWidgetTextField.prefixText,
+                textPrefix: S.current.birth_year,
+                typeInputTextField: TypeInputTextField.birthdayYear,
+                formatter: HelperUtils.formatterNumber(
+                  length: Dimens.size4.toInt(),
+                ),
+              ),
             ),
             Constants.verticalBox20,
             CustomButton(
               title: S.current.continue_,
-              onTap: () => NavigationService.instance.navigateToScreen(
-                const ConfirmEmailPage(),
-              ),
+              onTap: () => _continueWithBirthYear.call(),
             ),
           ],
         ),
       );
+
+  void _continueWithBirthYear() {
+    checkValid;
+    if (_birthController.text.isNotEmpty) {
+      NavigationService.instance.navigateToScreen(const ConfirmEmailPage());
+    }
+  }
 }

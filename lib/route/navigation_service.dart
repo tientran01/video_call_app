@@ -25,14 +25,13 @@ class NavigationService {
   void showBottomSheet({
     required Widget child,
     required BuildContext context,
-    double? height,
   }) {
     showModalBottomSheet(
       constraints: BoxConstraints(
-        maxHeight: height ?? MediaQuery.of(context).size.height / Dimens.size2,
+        maxHeight: MediaQuery.of(context).size.height,
         maxWidth: DeviceHelper.shared.getWidth(context),
       ),
-      backgroundColor: AppColors.eerieBlack,
+      backgroundColor: AppColors.aliceBlue,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(Dimens.size20),

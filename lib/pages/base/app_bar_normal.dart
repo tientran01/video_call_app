@@ -19,11 +19,17 @@ class AppBarNormal extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: _buildLeadingIcon(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              _buildLeadingIcon(),
+            ],
+          ),
         ),
         Expanded(
           flex: Dimens.size4.toInt(),
-          child: Center(
+          child: Container(
+            alignment: Alignment.center,
             child: child,
           ),
         ),
@@ -50,23 +56,19 @@ class AppBarNormal extends StatelessWidget {
           child: TextView(
             text: S.current.cancel,
             fontColor: AppColors.blue,
+            fontSize: Dimens.size20,
           ),
         );
       case LeadingButtonType.backIcon:
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            IconButton(
-              focusColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              splashColor: Colors.transparent,
-              onPressed: () => NavigationService.instance.goBack(),
-              icon: Assets.icons.icBack.image(
-                width: Dimens.size25,
-                color: AppColors.blue,
-              ),
-            ),
-          ],
+        return InkWell(
+          focusColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          onTap: () => NavigationService.instance.goBack(),
+          child: Assets.icons.icBack.image(
+            width: Dimens.size25,
+            color: AppColors.blue,
+          ),
         );
       default:
         return Constants.emptyBox;

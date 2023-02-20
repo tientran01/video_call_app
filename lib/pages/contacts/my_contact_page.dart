@@ -24,7 +24,6 @@ class _MyContactPageState extends State<MyContactPage> {
             hintText: S.current.search_contacts,
             prefixWidgetType: PrefixWidgetTextField.prefixIcon,
             iconPrefixPath: Assets.icons.icSearch.path,
-            validateError: false,
             suffixIcon: (searchText.isNotEmpty ||
                     searchEditingController.text.isNotEmpty)
                 ? IconButton(
@@ -34,7 +33,7 @@ class _MyContactPageState extends State<MyContactPage> {
                     onPressed: () {
                       searchEditingController.clear();
                       setState(() {
-                        searchText = Strings.splash;
+                        searchText = Strings.empty;
                       });
                     },
                     icon: Assets.icons.icCancel.image(

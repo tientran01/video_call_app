@@ -33,4 +33,6 @@ enum TypeInputTextField {
   email, 
   password,
   phoneNumber,
+  normal,
+  birthdayYear,
 }

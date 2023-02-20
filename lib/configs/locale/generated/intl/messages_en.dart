@@ -60,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "edit_meeting": MessageLookupByLibrary.simpleMessage("Edit Meeting"),
         "edit_name": MessageLookupByLibrary.simpleMessage("Edit Name"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "email_invalid": MessageLookupByLibrary.simpleMessage(
+            "Please enter a valid email address."),
         "end": MessageLookupByLibrary.simpleMessage("End"),
         "enter_your_email_address":
             MessageLookupByLibrary.simpleMessage("Enter your email address"),
@@ -96,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Other sign in methods"),
         "participant": MessageLookupByLibrary.simpleMessage("Participants"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "password_invalid": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 8 characters, including at least 1 letter and 1 number."),
         "personal_metting_id":
             MessageLookupByLibrary.simpleMessage("Personal Meeting ID"),
         "phone_contacts_matching":

@@ -13,7 +13,6 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final Color fontColor;
   final VoidCallback? onTap;
-  final bool enableButton;
   final bool icon;
   final String? iconPath;
   const CustomButton({
@@ -24,7 +23,6 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.fontColor = Colors.white,
     this.onTap,
-    this.enableButton = true,
     this.icon = false,
     this.iconPath,
   }) : super(key: key);
@@ -53,7 +51,7 @@ class CustomButton extends StatelessWidget {
           children: [
             icon
                 ? Image.asset(
-                    iconPath ?? Strings.splash,
+                    iconPath ?? Strings.empty,
                     width: Dimens.size25,
                   )
                 : Constants.emptyBox,

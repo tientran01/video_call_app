@@ -60,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Điều chỉnh cuộc họp"),
         "edit_name": MessageLookupByLibrary.simpleMessage("Chỉnh sửa tên"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "email_invalid": MessageLookupByLibrary.simpleMessage(
+            "Vui lòng nhập một địa chỉ email hợp lệ."),
         "end": MessageLookupByLibrary.simpleMessage("Rời khỏi"),
         "enter_your_email_address":
             MessageLookupByLibrary.simpleMessage("Nhập địa chỉ email của bạn"),
@@ -95,6 +97,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phương thức đăng nhập khác"),
         "participant": MessageLookupByLibrary.simpleMessage("Người tham gia"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "password_invalid": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu tối thiểu 8 ký tự, bao gồm ít nhất 1 ký tự chữ và 1 ký tự số."),
         "personal_metting_id":
             MessageLookupByLibrary.simpleMessage("ID Cuộc họp cá nhân"),
         "phone_contacts_matching":

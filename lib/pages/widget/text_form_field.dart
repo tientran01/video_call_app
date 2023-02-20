@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_call_app/components/app_colors.dart';
 import 'package:video_call_app/components/constants.dart';
 import 'package:video_call_app/components/dimens.dart';
 import 'package:video_call_app/components/enums.dart';
 import 'package:video_call_app/components/strings.dart';
-import 'package:video_call_app/gen/assets.gen.dart';
+import 'package:video_call_app/configs/locale/generated/l10n.dart';
+import 'package:video_call_app/helper/helper_utils.dart';
 import 'package:video_call_app/pages/widget/text_view.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatefulWidget {
   final TextEditingController textEditingController;
   final String hintText;
-  final bool validateError;
   final String errorText;
   final Color fillColor;
   final bool autoFocus;
@@ -24,11 +25,11 @@ class CustomTextFormField extends StatefulWidget {
   final String? iconPrefixPath;
   final String? textPrefix;
   final TypeInputTextField typeInputTextField;
+  final List<TextInputFormatter>? formatter;
   const CustomTextFormField({
     Key? key,
     required this.textEditingController,
     required this.hintText,
-    this.validateError = true,
     this.errorText = '',
     this.fillColor = AppColors.brightGray,
     this.autoFocus = false,
@@ -39,7 +40,8 @@ class CustomTextFormField extends StatefulWidget {
     this.prefixWidgetType = PrefixWidgetTextField.none,
     this.iconPrefixPath,
     this.textPrefix,
-    this.typeInputTextField = TypeInputTextField.email,
+    this.typeInputTextField = TypeInputTextField.normal,
+    this.formatter,
   }) : super(key: key);
 
   @override
@@ -47,6 +49,8 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  String? value;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -76,8 +80,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           horizontal: Dimens.size15,
           vertical: Dimens.size20,
         ),
-        errorText: widget.validateError ? widget.errorText : null,
-        errorStyle: const TextStyle(height: Dimens.size0),
+        errorStyle: const TextStyle(
+          height: Dimens.size0,
+        ),
+        errorMaxLines: Dimens.size3.toInt(),
         prefixIcon: prefixWidget,
         focusedBorder: OutlineInputBorder(
           borderRadius: widget.isBorderRadius
@@ -90,6 +96,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         suffixIcon: suffixWidget,
       ),
       onChanged: widget.onChanged,
+      validator: (value) => validatorText(value ?? Strings.empty),
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      inputFormatters: widget.formatter,
     );
   }
 
@@ -111,17 +120,17 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           focusColor: Colors.transparent,
           onPressed: () {},
           icon: Image.asset(
-            widget.iconPrefixPath ?? Strings.splash,
+            widget.iconPrefixPath ?? Strings.empty,
             color: AppColors.oldSilver,
+            width: Dimens.size25,
           ),
         );
       case PrefixWidgetTextField.prefixText:
         return Padding(
           padding: Constants.edgeInsetsAll15,
           child: TextView(
-            text: widget.textPrefix ?? Strings.splash,
-            fontColor: AppColors.oldSilver,
-            fontSize: Dimens.size23,
+            text: widget.textPrefix ?? Strings.empty,
+            fontSize: Dimens.size20,
           ),
         );
       case PrefixWidgetTextField.none:
@@ -131,12 +140,38 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   TextInputType get keyboard {
     switch (widget.typeInputTextField) {
-      case TypeInputTextField.email:
-        return TextInputType.text;
-      case TypeInputTextField.password:
-        return TextInputType.phone;
       case TypeInputTextField.phoneNumber:
+      case TypeInputTextField.birthdayYear:
         return TextInputType.phone;
+      case TypeInputTextField.normal:
+      case TypeInputTextField.email:
+      case TypeInputTextField.password:
+        return TextInputType.text;
+    }
+  }
+
+  String? validatorText(String value) {
+    switch (widget.typeInputTextField) {
+      case TypeInputTextField.email:
+        if (!HelperUtils.emailValidated(value)) {
+          return S.current.email_invalid;
+        }
+        return Strings.empty;
+      case TypeInputTextField.password:
+        if (!HelperUtils.passwordValidted(value)) {
+          return S.current.password_invalid;
+        }
+        return Strings.empty;
+      case TypeInputTextField.birthdayYear:
+        if (!HelperUtils.numberValidated(
+          number: value,
+          length: Dimens.size4.toInt(),
+        )) {
+          return S.current.please_confirm_your_birth_year;
+        }
+        return Strings.empty;
+      default:
+        return null;
     }
   }
 }

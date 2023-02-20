@@ -24,28 +24,23 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
         ),
         child: Column(
           children: [
-            Column(
-              children: [
-                TextView(
-                  text: S.current.personal_metting_id,
-                  fontColor: AppColors.oldSilver,
-                  fontSize: Dimens.size18,
-                  fontWeight: FontWeight.w600,
-                ),
-                Constants.verticalBox10,
-                const TextView(
-                  text: "234 444 444",
-                  fontSize: Dimens.size25,
-                  fontWeight: FontWeight.w700,
-                ),
-              ],
+            TextView(
+              text: S.current.personal_metting_id,
+              fontColor: AppColors.oldSilver,
+              fontWeight: FontWeight.w600,
+            ),
+            Constants.verticalBox10,
+            const TextView(
+              text: "234 444 444",
+              fontSize: Dimens.size45,
+              fontWeight: FontWeight.w700,
             ),
             Constants.verticalBox20,
             Container(
               width: MediaQuery.of(context).size.width,
               padding: Constants.edgeInsetsAll10,
               decoration: BoxDecoration(
-                color: AppColors.raisinBlack,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(
                   Dimens.size10,
                 ),
@@ -71,24 +66,6 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
               ),
             ),
             Constants.verticalBox10,
-            InkWell(
-              splashColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () => NavigationService.instance.goBack(),
-              child: Container(
-                alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width,
-                padding: Constants.edgeInsetsAll10,
-                child: Text(
-                  S.current.cancel,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: Dimens.size17,
-                  ),
-                ),
-              ),
-            ),
           ],
         ),
       ),
