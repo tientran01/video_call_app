@@ -13,7 +13,7 @@ class NavigationService {
 
   final GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
 
-  dynamic goBack() => navigationKey.currentState?.pop();
+  dynamic goBack({dynamic value}) => navigationKey.currentState?.pop(value);
 
   Future<dynamic> navigateToScreen(Widget page, {arguments}) async =>
       navigationKey.currentState?.push(

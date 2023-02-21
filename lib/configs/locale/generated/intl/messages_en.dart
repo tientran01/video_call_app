@@ -32,6 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "birth_year": MessageLookupByLibrary.simpleMessage("Birth Year"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "channel_id_invalid":
+            MessageLookupByLibrary.simpleMessage("Meeting ID is not empty"),
         "channel_name": MessageLookupByLibrary.simpleMessage("Channel name"),
         "channels": MessageLookupByLibrary.simpleMessage("Channels"),
         "check_your_email_for_a_code":
@@ -136,6 +138,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "verify_your_age":
             MessageLookupByLibrary.simpleMessage("Verify your age"),
+        "waiting_for_user": MessageLookupByLibrary.simpleMessage(
+            "Please wait for remote user to join"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome")
       };
 }
