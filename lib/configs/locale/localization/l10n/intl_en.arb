@@ -80,5 +80,7 @@
       "last_name": "Last Name",
       "send": "Send",
       "password_invalid": "Password must be at least 8 characters, including at least 1 letter and 1 number.",
-      "email_invalid": "Please enter a valid email address."
+      "email_invalid": "Please enter a valid email address.",
+      "channel_id_invalid": "Meeting ID is not empty",
+      "waiting_for_user": "Please wait for remote user to join"
 }

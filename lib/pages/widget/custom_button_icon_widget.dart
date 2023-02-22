@@ -44,7 +44,7 @@ class CustomButtonIconWidget extends StatelessWidget {
         (title != null)
             ? TextView(
                 text: title!,
-                fontSize: Dimens.size20,
+                fontSize: Dimens.size18,
                 fontColor: AppColors.oldSilver,
               )
             : Constants.emptyBox,

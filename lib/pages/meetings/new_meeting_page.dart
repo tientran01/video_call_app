@@ -1,5 +1,4 @@
-import 'package:agora_rtc_engine/rtc_engine.dart';
-import 'package:video_call_app/pages/widget/no_splash_widget.dart';
+import 'package:flutter/services.dart';
 
 import 'screen.dart';
 
@@ -11,8 +10,9 @@ class NewMeetingPage extends BaseScreen {
 }
 
 class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
+  final _formKey = GlobalKey<FormState>();
   final _channelController = TextEditingController();
-  ClientRole clientRoleType = ClientRole.Broadcaster;
+  String _channelId = '';
 
   @override
   String title() => S.current.start_meeting;
@@ -23,8 +23,14 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
   @override
   void dispose() {
     _channelController.dispose();
+    _channelController.text.isEmpty;
     super.dispose();
   }
+
+  bool get channelIdEmpty => (_channelController.text.isNotEmpty);
+
+  bool get isDisableButton => (_channelController.text.isNotEmpty &&
+      _channelController.text.length >= Dimens.size8.toInt());
 
   @override
   Widget body() {
@@ -32,55 +38,65 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
       child: Padding(
         padding: Constants.edgeInsetsAll15,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomTextFormField(
-              textEditingController: _channelController,
-              fillColor: Colors.grey.shade300,
-              hintText: S.current.meeting_id,
-              errorText: "Channel name is Tieng",
-              typeInputTextField: TypeInputTextField.phoneNumber,
-              autoFocus: true,
-              prefixWidgetType: PrefixWidgetTextField.prefixIcon,
-              iconPrefixPath: Assets.icons.icLink.path,
+            Form(
+              key: _formKey,
+              child: CustomTextFormField(
+                textEditingController: _channelController,
+                fillColor: Colors.grey.shade300,
+                hintText: S.current.meeting_id,
+                typeInputTextField: TypeInputTextField.channelId,
+                autoFocus: true,
+                prefixWidgetType: PrefixWidgetTextField.prefixIcon,
+                iconPrefixPath: Assets.icons.icLink.path,
+                suffixWidgetType: SuffixWidgetTextField.suffixIconClear,
+                onChanged: (value) {
+                  setState(() {
+                    _channelId = value;
+                    _channelId = _channelController.text;
+                  });
+                },
+                suffixIcon: channelIdEmpty
+                    ? IconButton(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        onPressed: () {
+                          _channelController.clear();
+                          setState(() {
+                            _channelId = Strings.empty;
+                          });
+                        },
+                        icon: Assets.icons.icCancel.image(
+                          color: AppColors.oldSilver.withOpacity(
+                            Dimens.opacity4,
+                          ),
+                          width: Dimens.size20,
+                        ),
+                      )
+                    : Constants.emptyBox,
+                formatter: [
+                  LengthLimitingTextInputFormatter(
+                    8,
+                  ),
+                ],
+              ),
             ),
             Constants.verticalBox10,
-            NoSplashWidget(
-              child: RadioListTile(
-                value: ClientRole.Broadcaster,
-                groupValue: clientRoleType,
-                onChanged: (ClientRole? value) {
-                  setState(() {
-                    clientRoleType = value!;
-                  });
-                },
-                title: const TextView(
-                  text: "Broadcaster",
-                  fontColor: AppColors.oldSilver,
-                ),
-              ),
+            TextView(
+              text: S.current.channel_id_invalid,
+              fontColor: AppColors.oldSilver,
+              fontSize: Dimens.size20,
             ),
-            NoSplashWidget(
-              child: RadioListTile(
-                value: ClientRole.Audience,
-                groupValue: clientRoleType,
-                onChanged: (ClientRole? value) {
-                  setState(() {
-                    clientRoleType = value!;
-                  });
-                },
-                title: const TextView(
-                  text: "Audience",
-                  fontColor: AppColors.oldSilver,
-                ),
-              ),
-            ),
-            Constants.verticalBox30,
+            Constants.verticalBox20,
             CustomButton(
               title: S.current.start_meeting,
               bgColor: AppColors.blue,
               width: MediaQuery.of(context).size.width,
               heigth: Dimens.size60,
               onTap: () => onJoin(),
+              disableButton: !isDisableButton,
             ),
           ],
         ),
@@ -89,16 +105,15 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
   }
 
   Future<void> onJoin() async {
-    if (_channelController.text.isNotEmpty) {
-      await [Permission.camera, Permission.microphone].request();
-      FocusManager.instance.primaryFocus?.unfocus();
+    FocusManager.instance.primaryFocus?.unfocus();
+    NavigationService.instance.navigateToScreen(
+      CallVideoPage(
+        channelID: _channelId,
+      ),
+    );
+    setState(() {
       _channelController.clear();
-      NavigationService.instance.navigateToScreen(
-        CallPage(
-          channelName: _channelController.text,
-          clientRoleType: clientRoleType,
-        ),
-      );
-    }
+      _channelId = Strings.empty;
+    });
   }
 }

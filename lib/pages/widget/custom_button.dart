@@ -15,6 +15,7 @@ class CustomButton extends StatelessWidget {
   final VoidCallback? onTap;
   final bool icon;
   final String? iconPath;
+  final bool disableButton;
   const CustomButton({
     Key? key,
     required this.title,
@@ -25,13 +26,14 @@ class CustomButton extends StatelessWidget {
     this.onTap,
     this.icon = false,
     this.iconPath,
+    this.disableButton = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: Colors.transparent,
-      onTap: onTap,
+      onTap: disableButton ? () {} : onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: Dimens.size30,
@@ -40,7 +42,7 @@ class CustomButton extends StatelessWidget {
         height: heigth,
         width: width ?? DeviceHelper.shared.getWidth(context),
         decoration: BoxDecoration(
-          color: bgColor,
+          color: disableButton ? AppColors.brightGray : bgColor,
           borderRadius: BorderRadius.circular(
             Dimens.size15,
           ),
@@ -58,7 +60,7 @@ class CustomButton extends StatelessWidget {
             icon ? Constants.horizontalBox5 : Constants.emptyBox,
             TextView(
               text: title,
-              fontColor: fontColor,
+              fontColor: disableButton ? AppColors.oldSilver : fontColor,
               fontWeight: FontWeight.w700,
             ),
           ],

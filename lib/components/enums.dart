@@ -35,4 +35,5 @@ enum TypeInputTextField {
   phoneNumber,
   normal,
   birthdayYear,
+  channelId,
 }

@@ -849,6 +849,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Meeting ID is not empty`
+  String get channel_id_invalid {
+    return Intl.message(
+      'Meeting ID is not empty',
+      name: 'channel_id_invalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please wait for remote user to join`
+  String get waiting_for_user {
+    return Intl.message(
+      'Please wait for remote user to join',
+      name: 'waiting_for_user',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

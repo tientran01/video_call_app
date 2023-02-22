@@ -142,6 +142,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     switch (widget.typeInputTextField) {
       case TypeInputTextField.phoneNumber:
       case TypeInputTextField.birthdayYear:
+      case TypeInputTextField.channelId:
         return TextInputType.phone;
       case TypeInputTextField.normal:
       case TypeInputTextField.email:

@@ -17,6 +17,8 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
 
   bool isNormalAppBar() => true;
 
+  bool isBackgroundColor() => true;
+
   Widget appBarWidget() {
     throw UnimplementedError();
   }
@@ -44,7 +46,7 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
         appBar: AppBar(
           automaticallyImplyLeading: false,
           elevation: Dimens.size0,
-          backgroundColor: AppColors.aliceBlue,
+          backgroundColor: isBackgroundColor() ? AppColors.aliceBlue : Colors.transparent,
           title: AppBarNormal(
             actionButtonType: actionButtonType(),
             leadingButtonType: leadingButtonType(),

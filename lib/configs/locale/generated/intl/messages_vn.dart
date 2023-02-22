@@ -32,6 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "birth_year": MessageLookupByLibrary.simpleMessage("Năm sinh"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
+        "channel_id_invalid": MessageLookupByLibrary.simpleMessage(
+            "ID Cuộc họp không được bỏ trống."),
         "channel_name": MessageLookupByLibrary.simpleMessage("Tên kênh"),
         "channels": MessageLookupByLibrary.simpleMessage("Kênh"),
         "check_your_email_for_a_code":
