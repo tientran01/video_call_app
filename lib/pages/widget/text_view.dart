@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_call_app/components/app_colors.dart';
-import 'package:video_call_app/components/device_helper.dart';
 
 import '../../components/dimens.dart';
 
@@ -12,14 +11,16 @@ class TextView extends StatelessWidget {
   final FontWeight fontWeight;
   final TextAlign? textAlign;
   final int? maxLines;
+  final bool upperCaseText;
   const TextView({
     Key? key,
     required this.text,
-    this.fontSize = Dimens.size23,
+    this.fontSize = Dimens.size15,
     this.fontColor = AppColors.arsenic,
     this.fontWeight = FontWeight.w600,
     this.textAlign,
     this.maxLines,
+    this.upperCaseText = false,
   }) : super(key: key);
 
   @override
@@ -29,15 +30,13 @@ class TextView extends StatelessWidget {
       style: GoogleFonts.quicksand(
         textStyle: TextStyle(
           color: fontColor,
-          fontSize: DeviceHelper.shared.getTextSize(
-            fontSize: fontSize,
-            context: context,
-          ),
+          fontSize: upperCaseText ? Dimens.size13 : fontSize,
           fontWeight: fontWeight,
         ),
       ),
       maxLines: maxLines,
       textAlign: textAlign,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

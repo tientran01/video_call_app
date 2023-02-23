@@ -16,3 +16,4 @@ export 'package:video_call_app/components/strings.dart';
 export 'package:video_call_app/components/device_helper.dart';
 export 'package:video_call_app/pages/widget/text_view.dart';
 export 'package:video_call_app/pages/meetings/call_video_page.dart';
+export 'package:video_call_app/pages/meetings/join_meeting_page.dart';

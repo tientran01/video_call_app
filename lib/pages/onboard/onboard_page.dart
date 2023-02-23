@@ -24,11 +24,11 @@ class _OnBoardPageState extends State<OnBoardPage> {
         child: Stack(
           children: [
             Positioned(
-              top: Dimens.size100,
+              top: DeviceHelper.shared.getWidth(context) / Dimens.size3,
               left: Dimens.size0,
               right: Dimens.size0,
               child: Lottie.asset(
-                'assets/json/meeting.json',
+                Assets.json.videoOnboard,
                 repeat: true,
                 reverse: true,
                 animate: true,
@@ -52,7 +52,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
                     TextView(
                       text: S.current.welcome,
                       fontColor: AppColors.arsenic,
-                      fontSize: Dimens.size30,
+                      fontSize: Dimens.size20,
                       fontWeight: FontWeight.w700,
                     ),
                     Constants.verticalBox10,

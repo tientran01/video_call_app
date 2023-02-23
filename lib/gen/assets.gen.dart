@@ -41,10 +41,6 @@ class $AssetsIconsGen {
   AssetGenImage get icCancel =>
       const AssetGenImage('assets/icons/ic_cancel.png');
 
-  /// File path: assets/icons/ic_change_camera.png
-  AssetGenImage get icChangeCamera =>
-      const AssetGenImage('assets/icons/ic_change_camera.png');
-
   /// File path: assets/icons/ic_chat.png
   AssetGenImage get icChat => const AssetGenImage('assets/icons/ic_chat.png');
 
@@ -58,10 +54,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_create.png
   AssetGenImage get icCreate =>
       const AssetGenImage('assets/icons/ic_create.png');
-
-  /// File path: assets/icons/ic_down_arrow.png
-  AssetGenImage get icDownArrow =>
-      const AssetGenImage('assets/icons/ic_down_arrow.png');
 
   /// File path: assets/icons/ic_edit.png
   AssetGenImage get icEdit => const AssetGenImage('assets/icons/ic_edit.png');
@@ -94,6 +86,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_more.png
   AssetGenImage get icMore => const AssetGenImage('assets/icons/ic_more.png');
 
+  /// File path: assets/icons/ic_participants.png
+  AssetGenImage get icParticipants =>
+      const AssetGenImage('assets/icons/ic_participants.png');
+
   /// File path: assets/icons/ic_search.png
   AssetGenImage get icSearch =>
       const AssetGenImage('assets/icons/ic_search.png');
@@ -105,12 +101,20 @@ class $AssetsIconsGen {
   AssetGenImage get icShareScreen =>
       const AssetGenImage('assets/icons/ic_share_screen.png');
 
+  /// File path: assets/icons/ic_switch_camera.png
+  AssetGenImage get icSwitchCamera =>
+      const AssetGenImage('assets/icons/ic_switch_camera.png');
+
   /// File path: assets/icons/ic_team_chat.png
   AssetGenImage get icTeamChat =>
       const AssetGenImage('assets/icons/ic_team_chat.png');
 
   /// File path: assets/icons/ic_user.png
   AssetGenImage get icUser => const AssetGenImage('assets/icons/ic_user.png');
+
+  /// File path: assets/icons/ic_video_off.png
+  AssetGenImage get icVideoOff =>
+      const AssetGenImage('assets/icons/ic_video_off.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
@@ -122,12 +126,10 @@ class $AssetsIconsGen {
         icCalendar,
         icCall,
         icCancel,
-        icChangeCamera,
         icChat,
         icClear,
         icContact,
         icCreate,
-        icDownArrow,
         icEdit,
         icFacebook,
         icGoogle,
@@ -137,28 +139,42 @@ class $AssetsIconsGen {
         icMic,
         icMicOff,
         icMore,
+        icParticipants,
         icSearch,
         icSend,
         icShareScreen,
+        icSwitchCamera,
         icTeamChat,
-        icUser
+        icUser,
+        icVideoOff
       ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/im_user.png
+  AssetGenImage get imUser => const AssetGenImage('assets/images/im_user.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [imUser];
 }
 
 class $AssetsJsonGen {
   const $AssetsJsonGen();
 
-  /// File path: assets/json/meeting.json
-  String get meeting => 'assets/json/meeting.json';
+  /// File path: assets/json/video_onboard.json
+  String get videoOnboard => 'assets/json/video_onboard.json';
 
   /// List of all assets
-  List<String> get values => [meeting];
+  List<String> get values => [videoOnboard];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsJsonGen json = $AssetsJsonGen();
 }
 

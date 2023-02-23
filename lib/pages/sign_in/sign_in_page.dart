@@ -43,11 +43,11 @@ class SignInPageState extends BaseScreenState<SignInPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Constants.verticalBox20,
+            Constants.verticalBox10,
             TextView(
               text: S.current.enter_your_email_address.toUpperCase(),
               fontColor: AppColors.oldSilver,
-              fontSize: Dimens.size18,
+              upperCaseText: true,
             ),
             Constants.verticalBox10,
             Form(
@@ -136,23 +136,24 @@ class SignInPageState extends BaseScreenState<SignInPage> {
               bgColor: AppColors.blue,
               onTap: () => _login(),
             ),
-            Constants.verticalBox10,
             InkWell(
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () => NavigationService.instance
                   .navigateToScreen(const ForgotPasswordPage()),
-              child: TextView(
-                text: S.current.forgot_password + Strings.questionMark,
-                fontColor: AppColors.blue,
-                fontSize: Dimens.size20,
-                fontWeight: FontWeight.w700,
+              child: Padding(
+                padding: Constants.edgeVertical20,
+                child: TextView(
+                  text: S.current.forgot_password + Strings.questionMark,
+                  fontColor: AppColors.blue,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
             Constants.verticalBox50,
             TextView(
               text: S.current.other_sign_in_methods.toUpperCase(),
-              fontSize: Dimens.size20,
+              upperCaseText: true,
               fontColor: AppColors.oldSilver,
             ),
             Constants.verticalBox10,

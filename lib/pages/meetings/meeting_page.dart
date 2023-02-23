@@ -1,3 +1,5 @@
+import 'package:google_fonts/google_fonts.dart';
+
 import 'screen.dart';
 
 class MeetingPage extends BaseScreen {
@@ -18,33 +20,30 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
   void onTapAction() {
     NavigationService.instance.showBottomSheet(
       child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: Dimens.size10,
-          vertical: Dimens.size20,
-        ),
+        padding: Constants.edgeHorizontal15,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextView(
               text: S.current.personal_metting_id,
-              fontColor: AppColors.oldSilver,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w800,
+              fontSize: Dimens.size17,
             ),
             Constants.verticalBox10,
-            const TextView(
-              text: "234 444 444",
-              fontSize: Dimens.size45,
-              fontWeight: FontWeight.w700,
+            Text(
+              Strings.channelName,
+              style: GoogleFonts.lato(
+                fontSize: Dimens.size28,
+                color: AppColors.blue,
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.center,
             ),
             Constants.verticalBox20,
             Container(
               width: MediaQuery.of(context).size.width,
-              padding: Constants.edgeInsetsAll10,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(
-                  Dimens.size10,
-                ),
-              ),
+              padding: Constants.edgeInsetsAll15,
               child: Column(
                 children: [
                   _buildPersonalMeetingItem(
@@ -52,11 +51,13 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
                     title: S.current.start_meeting,
                     iconPath: Assets.icons.icCalendar.path,
                   ),
+                  Constants.dividerCustom(),
                   _buildPersonalMeetingItem(
                     () {},
                     title: S.current.send_invitaion,
                     iconPath: Assets.icons.icSend.path,
                   ),
+                  Constants.dividerCustom(),
                   _buildPersonalMeetingItem(
                     () {},
                     title: S.current.edit_meeting,
@@ -121,6 +122,9 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
                 CustomButtonIconWidget(
                   iconPath: Assets.icons.icAdd.path,
                   title: S.current.join,
+                  onTap: () => NavigationService.instance.navigateToScreen(
+                    const JoinMeetingPage(),
+                  ),
                 ),
                 CustomButtonIconWidget(
                   iconPath: Assets.icons.icMeeting.path,

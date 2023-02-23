@@ -53,7 +53,7 @@ class _MyContactPageState extends State<MyContactPage> {
           Constants.verticalBox20,
           TextView(
             text: S.current.my_contacts,
-            fontSize: Dimens.size30,
+            fontSize: Dimens.size20,
             fontWeight: FontWeight.w600,
           ),
           Constants.verticalBox10,
@@ -73,6 +73,7 @@ class _MyContactPageState extends State<MyContactPage> {
                 Constants.horizontalBox10,
                 TextView(
                   text: S.current.connect_phone_contacts,
+                  fontColor: AppColors.arsenic,
                 )
               ],
             ),

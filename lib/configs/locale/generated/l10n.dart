@@ -869,6 +869,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Host`
+  String get host {
+    return Intl.message(
+      'Host',
+      name: 'host',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invite Link`
+  String get invite_link {
+    return Intl.message(
+      'Invite Link',
+      name: 'invite_link',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Participant ID`
+  String get participant_id {
+    return Intl.message(
+      'Participant ID',
+      name: 'participant_id',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meeting information`
+  String get meeting_information {
+    return Intl.message(
+      'Meeting information',
+      name: 'meeting_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End Meeting For All`
+  String get end_meeting_for_all {
+    return Intl.message(
+      'End Meeting For All',
+      name: 'end_meeting_for_all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Leave Meeting`
+  String get leave_meeting {
+    return Intl.message(
+      'Leave Meeting',
+      name: 'leave_meeting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy`
+  String get copy {
+    return Intl.message(
+      'Copy',
+      name: 'copy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Video`
+  String get start_video {
+    return Intl.message(
+      'Start Video',
+      name: 'start_video',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unmute`
+  String get unmute {
+    return Intl.message(
+      'Unmute',
+      name: 'unmute',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat`
+  String get chat {
+    return Intl.message(
+      'Chat',
+      name: 'chat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reactions`
+  String get reactions {
+    return Intl.message(
+      'Reactions',
+      name: 'reactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mute`
+  String get mute {
+    return Intl.message(
+      'Mute',
+      name: 'mute',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

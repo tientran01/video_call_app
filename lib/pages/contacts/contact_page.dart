@@ -60,14 +60,13 @@ class ContactPageState extends BaseScreenState<ContactPage>
           controller: _tabController,
           indicator: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(Dimens.size15),
+            borderRadius: BorderRadius.circular(
+              Dimens.size15,
+            ),
           ),
           labelStyle: GoogleFonts.quicksand(
             fontWeight: FontWeight.w600,
-            fontSize: DeviceHelper.shared.getTextSize(
-              fontSize: Dimens.size20,
-              context: context,
-            ),
+            fontSize: Dimens.size15,
           ),
           tabs: [
             Tab(

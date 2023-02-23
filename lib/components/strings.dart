@@ -1,8 +1,8 @@
 class Strings {
   static const String token =
-      "007eJxTYAhXXbCp7lM2b3HC4nMPfM3Tn+odbema+mPidpOYJ7fKZm1RYDAyMDFLNTAyTzYwMzMxtkxMSjI0N7dINUlMtkyyTElO9VL9nNwQyMjQyP+KlZEBAkF8DgZDIDAAAgYGAEo6IQ0=";
+      "007eJxTYKi0aNKzqH3n9fxkyn5l9Qmfvx2+HXdkw4k9TZfFpON5Vz1TYDAyMDFLNTAyTzYwMzMxtkxMSjI0N7dINUlMtkyyTElOleb4ntwQyMiwTkGamZEBAkF8DgZDIDAAAgYGACg5H/o=";
   static const String appID = "2046e027c066439abb1778e4ac9b9dce";
-  // static const String channelName = "11110000";
+  static const String channelName = "11110000";
   static const empty = '';
   static const questionMark = '?';
   static const hintTextEmail = 'example@gmail.com';

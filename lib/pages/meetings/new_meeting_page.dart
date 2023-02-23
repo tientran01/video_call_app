@@ -87,14 +87,12 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
             TextView(
               text: S.current.channel_id_invalid,
               fontColor: AppColors.oldSilver,
-              fontSize: Dimens.size20,
             ),
             Constants.verticalBox20,
             CustomButton(
               title: S.current.start_meeting,
               bgColor: AppColors.blue,
               width: MediaQuery.of(context).size.width,
-              heigth: Dimens.size60,
               onTap: () => onJoin(),
               disableButton: !isDisableButton,
             ),

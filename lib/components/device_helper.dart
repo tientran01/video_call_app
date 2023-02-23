@@ -45,7 +45,7 @@ class DeviceHelper {
     required double fontSize,
     required BuildContext context,
   }) {
-    double calc = fontSize / Dimens.size10;
+    double calc = fontSize / Dimens.size9;
     return (MediaQuery.of(context).size.height * 0.01) * calc;
   }
 }

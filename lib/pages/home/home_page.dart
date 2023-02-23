@@ -1,3 +1,5 @@
+import 'package:google_fonts/google_fonts.dart';
+
 import 'screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -87,6 +89,12 @@ class _HomePageState extends State<HomePage> {
           index: 3,
         ),
       ],
+      selectedLabelStyle: GoogleFonts.quicksand(
+        fontWeight: FontWeight.w600,
+      ),
+      unselectedLabelStyle: GoogleFonts.quicksand(
+        fontWeight: FontWeight.w600,
+      ),
     );
   }
 
