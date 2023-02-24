@@ -53,7 +53,6 @@ class CustomInfoSection extends StatelessWidget {
                   Constants.verticalBox5,
                   TextView(
                     text: 'anhtien@gmail.com',
-                    fontSize: Dimens.size20,
                     fontColor: AppColors.oldSilver,
                     fontWeight: FontWeight.w600,
                   ),

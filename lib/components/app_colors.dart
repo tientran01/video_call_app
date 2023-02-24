@@ -9,4 +9,5 @@ class AppColors {
   static const Color eerieBlack = Color(0xFF191919);
   static const Color aliceBlue = Color(0xFFECF2FF);
   static const Color brightGray = Color(0xFFEEEEEE);
+  static const Color graniteGray = Color(0xFF5F6769);
 }

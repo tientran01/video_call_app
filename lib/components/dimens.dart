@@ -1,13 +1,17 @@
 class Dimens {
+  static const size0 = 0.0;
   static const opacity2 = 0.2;
   static const opacity4 = 0.4;
-  static const size0 = 0.0;
+  static const zeroPointFive = 0.5;
+  static const zeroPointEight = 0.8;
   static const size1 = 1.0;
   static const size2 = 2.0;
   static const size3 = 3.0;
   static const size4 = 4.0;
   static const size5 = 5.0;
+  static const size6 = 6.0;
   static const size8 = 8.0;
+  static const size9 = 9.0;
   static const size10 = 10.0;
   static const size12 = 12.0;
   static const size13 = 13.0;
@@ -18,6 +22,7 @@ class Dimens {
   static const size20 = 20.0;
   static const size23 = 23.0;
   static const size25 = 25.0;
+  static const size28 = 28.0;
   static const size30 = 30.0;
   static const size35 = 35.0;
   static const size45 = 45.0;

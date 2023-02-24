@@ -1,11 +1,9 @@
 // ignore_for_file: avoid_print
 
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:video_call_app/components/strings.dart';
 import 'package:video_call_app/pages/base/loading_widget.dart';
-import 'package:video_call_app/pages/team_chat/screen.dart';
-import 'package:video_call_app/route/navigation_service.dart';
+import 'package:video_call_app/pages/meetings/screen.dart';
+import 'package:video_call_app/pages/meetings/widget/tool_bar_bottom_widget.dart';
 
 class CallVideoPage extends BaseScreen {
   final String channelID;
@@ -69,11 +67,6 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
         onTokenPrivilegeWillExpire: (RtcConnection connection, String token) {
           _engine.renewToken(token);
         },
-        onConnectionStateChanged: (connection, state, reason) {
-          print("reson========== ${reason.toString()}");
-          _engine.renewToken(
-              "007eJxTYFipXNxaNevMFampqbNu/L99vPJN+bdOn6zFgq5865RnKwQqMBgZmJilGhiZJxuYmZkYWyYmJRmam1ukmiQmWyZZpiSnTq39ktwQyMiwV2gJCyMDBIL4HAyGQGAABAwMADIdIKs=");
-        },
       ),
     );
 
@@ -102,34 +95,56 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
     return Scaffold(
       body: Stack(
         children: [
+          Positioned(
+            top: DeviceHelper.shared.getHeight(context) / Dimens.size6,
+            right: Dimens.size20,
+            child: CustomButton(
+              title: S.current.end,
+              bgColor: Colors.red,
+              onTap: () {
+                _engine.leaveChannel();
+                NavigationService.instance.goBack();
+              },
+            ),
+          ),
           Center(
             child: _remoteVideo(),
           ),
-          Container(
-            margin: Constants.edgeVertical20,
-            alignment: Alignment.topLeft,
-            decoration: BoxDecoration(
-              color: AppColors.brightGray.withOpacity(
-                Dimens.opacity4,
+          Positioned(
+            top: Dimens.size100,
+            left: Dimens.size20,
+            child: Container(
+              margin: Constants.edgeVertical20,
+              decoration: BoxDecoration(
+                color: AppColors.brightGray.withOpacity(
+                  Dimens.opacity4,
+                ),
+                borderRadius: BorderRadius.circular(
+                  Dimens.size10,
+                ),
               ),
-              borderRadius: BorderRadius.circular(
-                Dimens.size10,
+              width: 100,
+              height: 150,
+              child: Center(
+                child: _localUserJoined
+                    ? AgoraVideoView(
+                        controller: VideoViewController(
+                          rtcEngine: _engine,
+                          canvas: const VideoCanvas(uid: 0),
+                        ),
+                      )
+                    : const LoadingWidget(),
               ),
-            ),
-            width: 100,
-            height: 150,
-            child: Center(
-              child: _localUserJoined
-                  ? AgoraVideoView(
-                      controller: VideoViewController(
-                        rtcEngine: _engine,
-                        canvas: const VideoCanvas(uid: 0),
-                      ),
-                    )
-                  : const LoadingWidget(),
             ),
           ),
-          _toolBar(),
+          const Positioned(
+            bottom: Dimens.size0,
+            left: Dimens.size0,
+            right: Dimens.size0,
+            child: ToolBarBottomWidget(
+                // engine: _engine,
+                ),
+          ),
         ],
       ),
     );
@@ -155,64 +170,5 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
         textAlign: TextAlign.center,
       );
     }
-  }
-
-  Widget _toolBar() {
-    return Container(
-      padding: Constants.edgeVertical35,
-      alignment: Alignment.bottomCenter,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _buttonIcon(
-            iconPath:
-                muted ? Assets.icons.icMicOff.path : Assets.icons.icMic.path,
-            onPressed: () {
-              setState(() {
-                muted = !muted;
-              });
-              _engine.muteLocalAudioStream(muted);
-            },
-          ),
-          _buttonIcon(
-            iconPath: Assets.icons.icCall.path,
-            onPressed: () {
-              NavigationService.instance.goBack();
-              _engine.leaveChannel();
-            },
-            bgColor: Colors.red.shade500,
-            iconColor: Colors.white,
-            iconSize: Dimens.size30,
-          ),
-          _buttonIcon(
-            iconPath: Assets.icons.icChangeCamera.path,
-            onPressed: () => _engine.switchCamera(),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buttonIcon({
-    required String iconPath,
-    Color iconColor = Colors.blue,
-    Color bgColor = Colors.white,
-    required VoidCallback onPressed,
-    double iconSize = Dimens.size25,
-  }) {
-    return RawMaterialButton(
-      splashColor: Colors.transparent,
-      hoverColor: Colors.transparent,
-      highlightColor: Colors.transparent,
-      fillColor: bgColor,
-      shape: const CircleBorder(),
-      padding: Constants.edgeInsetsAll15,
-      onPressed: onPressed,
-      child: Image.asset(
-        iconPath,
-        width: iconSize,
-        color: iconColor,
-      ),
-    );
   }
 }

@@ -130,7 +130,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           padding: Constants.edgeInsetsAll15,
           child: TextView(
             text: widget.textPrefix ?? Strings.empty,
-            fontSize: Dimens.size20,
           ),
         );
       case PrefixWidgetTextField.none:

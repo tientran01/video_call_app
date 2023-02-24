@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_call_app/components/app_colors.dart';
 import 'package:video_call_app/components/constants.dart';
-import 'package:video_call_app/components/device_helper.dart';
 import 'package:video_call_app/components/dimens.dart';
 import 'package:video_call_app/components/strings.dart';
 import 'package:video_call_app/pages/widget/text_view.dart';
@@ -9,7 +8,6 @@ import 'package:video_call_app/pages/widget/text_view.dart';
 class CustomButton extends StatelessWidget {
   final String title;
   final Color bgColor;
-  final double? heigth;
   final double? width;
   final Color fontColor;
   final VoidCallback? onTap;
@@ -20,7 +18,6 @@ class CustomButton extends StatelessWidget {
     Key? key,
     required this.title,
     this.bgColor = AppColors.blue,
-    this.heigth = Dimens.size60,
     this.width,
     this.fontColor = Colors.white,
     this.onTap,
@@ -36,15 +33,13 @@ class CustomButton extends StatelessWidget {
       onTap: disableButton ? () {} : onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(
-          horizontal: Dimens.size30,
+          horizontal: Dimens.size20,
           vertical: Dimens.size15,
         ),
-        height: heigth,
-        width: width ?? DeviceHelper.shared.getWidth(context),
         decoration: BoxDecoration(
           color: disableButton ? AppColors.brightGray : bgColor,
           borderRadius: BorderRadius.circular(
-            Dimens.size15,
+            Dimens.size10,
           ),
         ),
         alignment: Alignment.center,

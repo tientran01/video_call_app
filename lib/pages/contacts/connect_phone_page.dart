@@ -28,7 +28,7 @@ class ConnectPhonePageState extends BaseScreenState<ConnectPhonePage> {
           child: TextView(
             text: S.current.add_your_phone_number.toUpperCase(),
             fontColor: AppColors.oldSilver,
-            fontSize: Dimens.size18,
+            fontSize: Dimens.size13,
           ),
         ),
         SizedBox(

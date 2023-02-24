@@ -1,17 +1,20 @@
 import 'package:video_call_app/pages/contacts/screen.dart';
 
-// ignore: must_be_immutable
 class AppBarNormal extends StatelessWidget {
   final LeadingButtonType leadingButtonType;
   final ActionButtonType actionButtonType;
   final Widget child;
   final VoidCallback? onTapAction;
+  final String actionText;
+  final Color bgActionText;
   const AppBarNormal({
     Key? key,
     this.actionButtonType = ActionButtonType.actionNone,
     this.leadingButtonType = LeadingButtonType.none,
     required this.child,
     this.onTapAction,
+    this.actionText = Strings.empty,
+    this.bgActionText = AppColors.blue,
   }) : super(key: key);
 
   @override
@@ -28,8 +31,7 @@ class AppBarNormal extends StatelessWidget {
         ),
         Expanded(
           flex: Dimens.size4.toInt(),
-          child: Container(
-            alignment: Alignment.center,
+          child: Center(
             child: child,
           ),
         ),
@@ -53,10 +55,12 @@ class AppBarNormal extends StatelessWidget {
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () => NavigationService.instance.goBack(),
-          child: TextView(
-            text: S.current.cancel,
-            fontColor: AppColors.blue,
-            fontSize: Dimens.size20,
+          child: Padding(
+            padding: Constants.edgeVertical10,
+            child: TextView(
+              text: S.current.cancel,
+              fontColor: AppColors.blue,
+            ),
           ),
         );
       case LeadingButtonType.backIcon:
@@ -65,9 +69,12 @@ class AppBarNormal extends StatelessWidget {
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
           onTap: () => NavigationService.instance.goBack(),
-          child: Assets.icons.icBack.image(
-            width: Dimens.size25,
-            color: AppColors.blue,
+          child: Padding(
+            padding: Constants.edgeInsetsAll10,
+            child: Assets.icons.icBack.image(
+              width: Dimens.size25,
+              color: AppColors.blue,
+            ),
           ),
         );
       default:
@@ -91,6 +98,23 @@ class AppBarNormal extends StatelessWidget {
         return _actionIcon(
           iconPath: Assets.icons.icAddButton.path,
           onPressed: () => onTapAction?.call(),
+        );
+      case ActionButtonType.actionText:
+        return InkWell(
+          onTap: () => onTapAction?.call(),
+          child: Container(
+            padding: Constants.edgeHori15Verti10,
+            decoration: BoxDecoration(
+              color: bgActionText,
+              borderRadius: BorderRadius.circular(
+                Dimens.size10,
+              ),
+            ),
+            child: TextView(
+              text: actionText,
+              fontColor: Colors.white,
+            ),
+          ),
         );
       case ActionButtonType.actionNone:
         return Constants.emptyBox;

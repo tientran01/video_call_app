@@ -82,5 +82,17 @@
       "password_invalid": "Password must be at least 8 characters, including at least 1 letter and 1 number.",
       "email_invalid": "Please enter a valid email address.",
       "channel_id_invalid": "Meeting ID is not empty",
-      "waiting_for_user": "Please wait for remote user to join"
+      "waiting_for_user": "Please wait for remote user to join",
+      "host": "Host",
+      "invite_link": "Invite Link",
+      "participant_id": "Participant ID",
+      "meeting_information": "Meeting information",
+      "end_meeting_for_all": "End Meeting For All",
+      "leave_meeting": "Leave Meeting",
+      "copy": "Copy",
+      "start_video": "Start Video",
+      "unmute": "Unmute",
+      "chat": "Chat",
+      "reactions": "Reactions",
+      "mute": "Mute"
 }

@@ -35,7 +35,7 @@ class SignUpPageState extends BaseScreenState<SignUpPage> {
             TextView(
               text: S.current.verify_your_age.toUpperCase(),
               fontColor: AppColors.oldSilver,
-              fontSize: Dimens.size18,
+              upperCaseText: true,
             ),
             Constants.verticalBox10,
             Form(

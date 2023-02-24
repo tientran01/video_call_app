@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Meeting ID is not empty"),
         "channel_name": MessageLookupByLibrary.simpleMessage("Channel name"),
         "channels": MessageLookupByLibrary.simpleMessage("Channels"),
+        "chat": MessageLookupByLibrary.simpleMessage("Chat"),
         "check_your_email_for_a_code":
             MessageLookupByLibrary.simpleMessage("Check your email for a code"),
         "confirm_email_msg": MessageLookupByLibrary.simpleMessage(
@@ -48,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Continue with Facebook"),
         "continue_with_google":
             MessageLookupByLibrary.simpleMessage("Continue with Google"),
+        "copy": MessageLookupByLibrary.simpleMessage("Copy"),
         "country_region_codes":
             MessageLookupByLibrary.simpleMessage("Country or Region Codes"),
         "create_account":
@@ -65,6 +67,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email_invalid": MessageLookupByLibrary.simpleMessage(
             "Please enter a valid email address."),
         "end": MessageLookupByLibrary.simpleMessage("End"),
+        "end_meeting_for_all":
+            MessageLookupByLibrary.simpleMessage("End Meeting For All"),
         "enter_your_email_address":
             MessageLookupByLibrary.simpleMessage("Enter your email address"),
         "enter_your_name_and_set_password":
@@ -79,17 +83,23 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot password"),
         "get_started": MessageLookupByLibrary.simpleMessage(
             "Get started with your account"),
+        "host": MessageLookupByLibrary.simpleMessage("Host"),
         "invite_contact":
             MessageLookupByLibrary.simpleMessage("Invite a Contact"),
+        "invite_link": MessageLookupByLibrary.simpleMessage("Invite Link"),
         "join": MessageLookupByLibrary.simpleMessage("Join"),
         "join_a_channel":
             MessageLookupByLibrary.simpleMessage("Join a Channel"),
         "join_audio": MessageLookupByLibrary.simpleMessage("Join Audio"),
         "join_meeting": MessageLookupByLibrary.simpleMessage("Join meeting"),
         "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
+        "leave_meeting": MessageLookupByLibrary.simpleMessage("Leave Meeting"),
         "meeting_id": MessageLookupByLibrary.simpleMessage("Meeting ID"),
+        "meeting_information":
+            MessageLookupByLibrary.simpleMessage("Meeting information"),
         "meetings": MessageLookupByLibrary.simpleMessage("Meetings"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
+        "mute": MessageLookupByLibrary.simpleMessage("Mute"),
         "my_contacts": MessageLookupByLibrary.simpleMessage("My Contacts"),
         "my_profile": MessageLookupByLibrary.simpleMessage("My Profile"),
         "new_meeting": MessageLookupByLibrary.simpleMessage("New meeting"),
@@ -99,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "other_sign_in_methods":
             MessageLookupByLibrary.simpleMessage("Other sign in methods"),
         "participant": MessageLookupByLibrary.simpleMessage("Participants"),
+        "participant_id":
+            MessageLookupByLibrary.simpleMessage("Participant ID"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_invalid": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters, including at least 1 letter and 1 number."),
@@ -110,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "please_confirm_your_birth_year": MessageLookupByLibrary.simpleMessage(
             "Please confirm your birth year."),
         "profile_photo": MessageLookupByLibrary.simpleMessage("Profile Photo"),
+        "reactions": MessageLookupByLibrary.simpleMessage("Reactions"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "resend_code": MessageLookupByLibrary.simpleMessage("Resend Code"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
@@ -131,8 +144,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "starred": MessageLookupByLibrary.simpleMessage("Starred"),
         "start_meeting":
             MessageLookupByLibrary.simpleMessage("Start a Meeting"),
+        "start_video": MessageLookupByLibrary.simpleMessage("Start Video"),
         "stop_video": MessageLookupByLibrary.simpleMessage("Stop Video"),
         "team_chat": MessageLookupByLibrary.simpleMessage("Team Chat"),
+        "unmute": MessageLookupByLibrary.simpleMessage("Unmute"),
         "update_password":
             MessageLookupByLibrary.simpleMessage("Update Password"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),

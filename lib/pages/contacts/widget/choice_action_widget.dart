@@ -12,9 +12,13 @@ class ChoiceActionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: DeviceHelper.shared.getWidth(context) *
-          Dimens.size2.toInt() /
-          Dimens.size3.toInt(),
+      width: DeviceHelper.shared.isTablet
+          ? DeviceHelper.shared.getWidth(context) *
+              Dimens.size2.toInt() /
+              Dimens.size4.toInt()
+          : DeviceHelper.shared.getWidth(context) *
+              Dimens.size2.toInt() /
+              Dimens.size3.toInt(),
       padding: Constants.edgeVertical10,
       decoration: BoxDecoration(
         color: AppColors.brightGray,
@@ -59,6 +63,7 @@ class ChoiceActionWidget extends StatelessWidget {
         padding: Constants.edgeInsetsAll15,
         child: TextView(
           text: title,
+          
         ),
       ),
     );

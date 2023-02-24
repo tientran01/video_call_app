@@ -16,6 +16,7 @@ enum ActionButtonType {
   actionCreate,
   actionAdd,
   actionNone,
+  actionText,
 }
 
 enum SuffixWidgetTextField {
