@@ -989,6 +989,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Switch Camera`
+  String get switch_camera {
+    return Intl.message(
+      'Switch Camera',
+      name: 'switch_camera',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

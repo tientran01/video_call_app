@@ -146,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bắt đầu Cuộc họp"),
         "start_video": MessageLookupByLibrary.simpleMessage("Bắt đầu Video"),
         "stop_video": MessageLookupByLibrary.simpleMessage("Dừng video"),
+        "switch_camera": MessageLookupByLibrary.simpleMessage("Switch Camera"),
         "team_chat": MessageLookupByLibrary.simpleMessage("Trò chuyện nhóm"),
         "unmute": MessageLookupByLibrary.simpleMessage("Bỏ tắt tiếng"),
         "update_password":

@@ -94,5 +94,6 @@
       "unmute": "Unmute",
       "chat": "Chat",
       "reactions": "Reactions",
-      "mute": "Mute"
+      "mute": "Mute",
+      "switch_camera": "Switch Camera"
 }

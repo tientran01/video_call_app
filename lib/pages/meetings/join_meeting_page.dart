@@ -1,10 +1,10 @@
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
+import 'package:video_call_app/pages/base/loading_widget.dart';
 import 'package:video_call_app/pages/meetings/screen.dart';
 import 'package:video_call_app/pages/meetings/widget/infor_meeting_widget.dart';
-import 'package:video_call_app/pages/meetings/widget/tool_bar_bottom_widget.dart';
+import 'package:video_call_app/pages/meetings/widget/participant_people_widget.dart';
 import 'package:video_call_app/pages/meetings/widget/leave_meeting_widget.dart';
-
-import '../base/loading_widget.dart';
+import 'widget/tool_bar_item_widget.dart';
 
 class JoinMeetingPage extends BaseScreen {
   const JoinMeetingPage({Key? key}) : super(key: key);
@@ -99,27 +99,33 @@ class JoinMeetingPageState extends BaseScreenState<JoinMeetingPage>
     _engine.registerEventHandler(
       RtcEngineEventHandler(
         onJoinChannelSuccess: (RtcConnection connection, int elapsed) {
-          setState(() {
-            _localUserJoined = true;
-          });
+          if (mounted) {
+            setState(() {
+              _localUserJoined = true;
+            });
+          }
         },
         onUserJoined: (
           RtcConnection connection,
           int remoteUid,
           int elapsed,
         ) {
-          setState(() {
-            _remoteUid = remoteUid;
-          });
+          if (mounted) {
+            setState(() {
+              _remoteUid = remoteUid;
+            });
+          }
         },
         onUserOffline: (
           RtcConnection connection,
           int remoteUid,
           UserOfflineReasonType reason,
         ) {
-          setState(() {
-            _remoteUid = null;
-          });
+          if (mounted) {
+            setState(() {
+              _remoteUid = null;
+            });
+          }
         },
         onTokenPrivilegeWillExpire: (RtcConnection connection, String token) {
           _engine.renewToken(token);
@@ -153,12 +159,66 @@ class JoinMeetingPageState extends BaseScreenState<JoinMeetingPage>
                 )
               : const LoadingWidget(),
         ),
-        const Positioned(
+        Positioned(
           left: Dimens.size0,
           right: Dimens.size0,
           bottom: Dimens.size0,
-          child: ToolBarBottomWidget(
-            // engine: _engine,
+          child: Container(
+            width: DeviceHelper.shared.getWidth(context),
+            padding: Constants.edgeRL15T5B20,
+            decoration: const BoxDecoration(
+              color: AppColors.aliceBlue,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ToolBarItemWidget(
+                  iconPath: muted
+                      ? Assets.icons.icMicOff.path
+                      : Assets.icons.icMic.path,
+                  title: muted ? S.current.mute : S.current.unmute,
+                  onTap: () {
+                    if (mounted) {
+                      setState(() {
+                        muted = !muted;
+                      });
+                    }
+                    _engine.muteLocalAudioStream(muted);
+                  },
+                  iconColor: muted ? Colors.red : AppColors.blue,
+                  fontColor: muted ? Colors.red : AppColors.blue,
+                ),
+                ToolBarItemWidget(
+                  iconPath: Assets.icons.icSwitchCamera.path,
+                  title: S.current.switch_camera,
+                  onTap: () {
+                    _engine.switchCamera();
+                  },
+                ),
+                ToolBarItemWidget(
+                  title: S.current.end,
+                  iconPath: Assets.icons.icCall.path,
+                  iconColor: Colors.red,
+                  fontColor: Colors.red,
+                  onTap: () {
+                    _engine.leaveChannel();
+                    NavigationService.instance.goBack();
+                  },
+                ),
+                ToolBarItemWidget(
+                  iconPath: Assets.icons.icParticipants.path,
+                  title: S.current.participant,
+                  onTap: () => NavigationService.instance.navigateToScreen(
+                    const ParticipantPeopleWidget(),
+                  ),
+                ),
+                ToolBarItemWidget(
+                  iconPath: Assets.icons.icMore.path,
+                  title: S.current.more,
+                  onTap: () {},
+                ),
+              ],
+            ),
           ),
         ),
       ],

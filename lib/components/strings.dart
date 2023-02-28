@@ -1,6 +1,6 @@
 class Strings {
   static const String token =
-      "007eJxTYKi0aNKzqH3n9fxkyn5l9Qmfvx2+HXdkw4k9TZfFpON5Vz1TYDAyMDFLNTAyTzYwMzMxtkxMSjI0N7dINUlMtkyyTElOleb4ntwQyMiwTkGamZEBAkF8DgZDIDAAAgYGACg5H/o=";
+      "007eJxTYJB4fEewY3m5VXSwN09OeWfDjz6LOROecl+9st6H6dkj32IFBiMDE7NUAyPzZAMzMxNjy8SkJENzc4tUk8RkyyTLlOTU3Kw/yQ2BjAxp8mlMjAwQCOJzMBgCgQEQMDAAALIqHxs=";
   static const String appID = "2046e027c066439abb1778e4ac9b9dce";
   static const String channelName = "11110000";
   static const empty = '';

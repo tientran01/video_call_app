@@ -3,7 +3,7 @@ export 'package:video_call_app/components/enums.dart';
 export 'package:video_call_app/configs/locale/generated/l10n.dart';
 export 'package:video_call_app/pages/base/base_screen.dart';
 export 'package:video_call_app/components/strings.dart';
-export 'package:video_call_app/pages/sign_up/confirm_email_page.dart';
+export 'package:video_call_app/pages/sign_up/sign_up_page.dart';
 export 'package:video_call_app/pages/team_chat/screen.dart';
 export 'package:video_call_app/pages/widget/text_form_field.dart';
 export 'package:video_call_app/route/navigation_service.dart';

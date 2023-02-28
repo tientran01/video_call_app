@@ -1,5 +1,4 @@
 import 'package:flutter/services.dart';
-
 import 'screen.dart';
 
 class NewMeetingPage extends BaseScreen {
@@ -104,14 +103,24 @@ class NewMeetingPageState extends BaseScreenState<NewMeetingPage> {
 
   Future<void> onJoin() async {
     FocusManager.instance.primaryFocus?.unfocus();
-    NavigationService.instance.navigateToScreen(
-      CallVideoPage(
-        channelID: _channelId,
-      ),
-    );
-    setState(() {
-      _channelController.clear();
-      _channelId = Strings.empty;
-    });
+    if (_channelId == Strings.channelName) {
+      NavigationService.instance.navigateToScreen(
+        CallVideoPage(
+          channelID: _channelId,
+        ),
+      );
+      setState(() {
+        _channelController.clear();
+        _channelId = Strings.empty;
+      });
+    } else {
+      NavigationService.instance.showPopUp(
+        barrierDismissible: false,
+        context: context,
+        title: "Invalid Meeting ID",
+        content: "This is my content",
+        defaultActionText: S.current.continue_,
+      );
+    }
   }
 }

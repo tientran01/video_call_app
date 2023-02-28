@@ -146,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Start a Meeting"),
         "start_video": MessageLookupByLibrary.simpleMessage("Start Video"),
         "stop_video": MessageLookupByLibrary.simpleMessage("Stop Video"),
+        "switch_camera": MessageLookupByLibrary.simpleMessage("Switch Camera"),
         "team_chat": MessageLookupByLibrary.simpleMessage("Team Chat"),
         "unmute": MessageLookupByLibrary.simpleMessage("Unmute"),
         "update_password":

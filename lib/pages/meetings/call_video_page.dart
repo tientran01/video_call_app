@@ -1,15 +1,16 @@
-// ignore_for_file: avoid_print
-
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:video_call_app/pages/base/loading_widget.dart';
 import 'package:video_call_app/pages/meetings/screen.dart';
-import 'package:video_call_app/pages/meetings/widget/tool_bar_bottom_widget.dart';
+import 'package:video_call_app/pages/meetings/widget/participant_people_widget.dart';
+import 'package:video_call_app/pages/meetings/widget/tool_bar_item_widget.dart';
 
 class CallVideoPage extends BaseScreen {
   final String channelID;
+  final ClientRoleType roleType;
   const CallVideoPage({
     super.key,
     required this.channelID,
+    this.roleType = ClientRoleType.clientRoleBroadcaster,
   });
 
   @override
@@ -40,29 +41,33 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
     _engine.registerEventHandler(
       RtcEngineEventHandler(
         onJoinChannelSuccess: (RtcConnection connection, int elapsed) {
-          print("local user ${connection.localUid} joined");
-          setState(() {
-            _localUserJoined = true;
-          });
+          if (mounted) {
+            setState(() {
+              _localUserJoined = true;
+            });
+          }
         },
         onUserJoined: (
           RtcConnection connection,
           int remoteUid,
           int elapsed,
         ) {
-          print("remote user $remoteUid joined");
-          setState(() {
-            _remoteUid = remoteUid;
-          });
+          if (mounted) {
+            setState(() {
+              _remoteUid = remoteUid;
+            });
+          }
         },
         onUserOffline: (
           RtcConnection connection,
           int remoteUid,
           UserOfflineReasonType reason,
         ) {
-          setState(() {
-            _remoteUid = null;
-          });
+          if (mounted) {
+            setState(() {
+              _remoteUid = null;
+            });
+          }
         },
         onTokenPrivilegeWillExpire: (RtcConnection connection, String token) {
           _engine.renewToken(token);
@@ -95,23 +100,11 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned(
-            top: DeviceHelper.shared.getHeight(context) / Dimens.size6,
-            right: Dimens.size20,
-            child: CustomButton(
-              title: S.current.end,
-              bgColor: Colors.red,
-              onTap: () {
-                _engine.leaveChannel();
-                NavigationService.instance.goBack();
-              },
-            ),
-          ),
           Center(
             child: _remoteVideo(),
           ),
           Positioned(
-            top: Dimens.size100,
+            top: Dimens.size50,
             left: Dimens.size20,
             child: Container(
               margin: Constants.edgeVertical20,
@@ -119,12 +112,9 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
                 color: AppColors.brightGray.withOpacity(
                   Dimens.opacity4,
                 ),
-                borderRadius: BorderRadius.circular(
-                  Dimens.size10,
-                ),
               ),
-              width: 100,
-              height: 150,
+              width: Dimens.size100,
+              height: Dimens.size150,
               child: Center(
                 child: _localUserJoined
                     ? AgoraVideoView(
@@ -137,13 +127,67 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: Dimens.size0,
             left: Dimens.size0,
             right: Dimens.size0,
-            child: ToolBarBottomWidget(
-                // engine: _engine,
-                ),
+            child: Container(
+              width: DeviceHelper.shared.getWidth(context),
+              padding: Constants.edgeRL15T5B20,
+              decoration: const BoxDecoration(
+                color: AppColors.aliceBlue,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ToolBarItemWidget(
+                    iconPath: muted
+                        ? Assets.icons.icMicOff.path
+                        : Assets.icons.icMic.path,
+                    title: muted ? S.current.mute : S.current.unmute,
+                    onTap: () {
+                      if (mounted) {
+                        setState(() {
+                          muted = !muted;
+                        });
+                      }
+                      _engine.muteLocalAudioStream(muted);
+                    },
+                    iconColor: muted ? Colors.red : AppColors.blue,
+                    fontColor: muted ? Colors.red : AppColors.blue,
+                  ),
+                  ToolBarItemWidget(
+                    iconPath: Assets.icons.icSwitchCamera.path,
+                    title: S.current.switch_camera,
+                    onTap: () {
+                      _engine.switchCamera();
+                    },
+                  ),
+                  ToolBarItemWidget(
+                    title: S.current.end,
+                    iconPath: Assets.icons.icCall.path,
+                    iconColor: Colors.red,
+                    fontColor: Colors.red,
+                    onTap: () {
+                      _engine.leaveChannel();
+                      NavigationService.instance.goBack();
+                    },
+                  ),
+                  ToolBarItemWidget(
+                    iconPath: Assets.icons.icParticipants.path,
+                    title: S.current.participant,
+                    onTap: () => NavigationService.instance.navigateToScreen(
+                      const ParticipantPeopleWidget(),
+                    ),
+                  ),
+                  ToolBarItemWidget(
+                    iconPath: Assets.icons.icMore.path,
+                    title: S.current.more,
+                    onTap: () {},
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
@@ -152,6 +196,12 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
 
   @override
   bool isBackgroundColor() => false;
+
+  @override
+  void onLeadingAction() {
+    _engine.leaveChannel();
+    NavigationService.instance.goBack();
+  }
 
   Widget _remoteVideo() {
     if (_remoteUid != null) {

@@ -32,10 +32,7 @@ class CustomButton extends StatelessWidget {
       splashColor: Colors.transparent,
       onTap: disableButton ? () {} : onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: Dimens.size20,
-          vertical: Dimens.size15,
-        ),
+        padding: Constants.edgeInsetsAll20,
         decoration: BoxDecoration(
           color: disableButton ? AppColors.brightGray : bgColor,
           borderRadius: BorderRadius.circular(

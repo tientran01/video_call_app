@@ -3,6 +3,7 @@ import 'package:video_call_app/components/app_colors.dart';
 import 'package:video_call_app/components/enums.dart';
 import 'package:video_call_app/components/strings.dart';
 import 'package:video_call_app/pages/base/app_bar_normal.dart';
+import 'package:video_call_app/route/navigation_service.dart';
 import '../../components/dimens.dart';
 import '../widget/text_view.dart';
 
@@ -62,6 +63,7 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
                   onTapAction: onTapAction,
                   actionText: actionText(),
                   bgActionText: bgActionText(),
+                  onLeadingAction: onLeadingAction,
                   child: isNormalAppBar()
                       ? TextView(
                           text: title(),
@@ -80,4 +82,6 @@ class BaseScreenState<Page extends BaseScreen> extends State<Page>
   }
 
   void onTapAction() {}
+
+  void onLeadingAction() => NavigationService.instance.goBack();
 }
