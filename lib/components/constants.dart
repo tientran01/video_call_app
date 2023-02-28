@@ -32,6 +32,7 @@ class Constants {
   static const edgeInsetsAll10 = EdgeInsets.all(Dimens.size10);
   static const edgeInsetsAll15 = EdgeInsets.all(Dimens.size15);
   static const edgeInsetsAll20 = EdgeInsets.all(Dimens.size20);
+  static const edgeVertical5 = EdgeInsets.symmetric(vertical: Dimens.size5);
   static const edgeVertical10 = EdgeInsets.symmetric(vertical: Dimens.size10);
   static const edgeVertical20 = EdgeInsets.symmetric(vertical: Dimens.size20);
   static const edgeVertical35 = EdgeInsets.symmetric(vertical: Dimens.size35);
@@ -47,11 +48,11 @@ class Constants {
     horizontal: Dimens.size15,
     vertical: Dimens.size20,
   );
-  static const edgeRL15T5B30 = EdgeInsets.only(
+  static const edgeRL15T5B20 = EdgeInsets.only(
     left: Dimens.size15,
     right: Dimens.size15,
     top: Dimens.size5,
-    bottom: Dimens.size30,
+    bottom: Dimens.size20,
   );
 
   static dividerCustom({

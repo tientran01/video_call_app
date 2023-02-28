@@ -1,4 +1,5 @@
 import 'package:google_fonts/google_fonts.dart';
+import 'package:video_call_app/pages/widget/no_splash_widget.dart';
 
 import 'screen.dart';
 
@@ -25,6 +26,7 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Constants.verticalBox10,
             TextView(
               text: S.current.personal_metting_id,
               fontWeight: FontWeight.w800,
@@ -40,7 +42,6 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
               ),
               textAlign: TextAlign.center,
             ),
-            Constants.verticalBox20,
             Container(
               width: MediaQuery.of(context).size.width,
               padding: Constants.edgeInsetsAll15,
@@ -90,13 +91,15 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
             ),
           ),
           Expanded(
-            child: IconButton(
-              alignment: Alignment.bottomRight,
-              onPressed: () {},
-              icon: Image.asset(
-                iconPath,
-                width: Dimens.size25,
-                color: AppColors.arsenic,
+            child: NoSplashWidget(
+              child: IconButton(
+                alignment: Alignment.bottomRight,
+                onPressed: () {},
+                icon: Image.asset(
+                  iconPath,
+                  width: Dimens.size25,
+                  color: AppColors.arsenic,
+                ),
               ),
             ),
           ),

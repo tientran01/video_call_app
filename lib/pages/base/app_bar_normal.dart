@@ -7,6 +7,7 @@ class AppBarNormal extends StatelessWidget {
   final VoidCallback? onTapAction;
   final String actionText;
   final Color bgActionText;
+  final VoidCallback? onLeadingAction;
   const AppBarNormal({
     Key? key,
     this.actionButtonType = ActionButtonType.actionNone,
@@ -15,6 +16,7 @@ class AppBarNormal extends StatelessWidget {
     this.onTapAction,
     this.actionText = Strings.empty,
     this.bgActionText = AppColors.blue,
+    this.onLeadingAction,
   }) : super(key: key);
 
   @override
@@ -54,7 +56,7 @@ class AppBarNormal extends StatelessWidget {
           focusColor: Colors.transparent,
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
-          onTap: () => NavigationService.instance.goBack(),
+          onTap: () => onLeadingAction?.call(),
           child: Padding(
             padding: Constants.edgeVertical10,
             child: TextView(
@@ -68,7 +70,7 @@ class AppBarNormal extends StatelessWidget {
           focusColor: Colors.transparent,
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
-          onTap: () => NavigationService.instance.goBack(),
+          onTap: () => onLeadingAction?.call(),
           child: Padding(
             padding: Constants.edgeInsetsAll10,
             child: Assets.icons.icBack.image(

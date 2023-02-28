@@ -1,5 +1,9 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_call_app/components/device_helper.dart';
+import 'package:video_call_app/pages/widget/text_view.dart';
 import '../components/app_colors.dart';
 import '../components/dimens.dart';
 
@@ -53,6 +57,66 @@ class NavigationService {
             ),
       context: context,
       builder: (context) => child,
+    );
+  }
+
+  Future<dynamic> showPopUp({
+    required BuildContext context,
+    bool barrierDismissible = true,
+    required String title,
+    required String content,
+    String? cancelActionText,
+    required String defaultActionText,
+    VoidCallback? cancelOnTap,
+  }) {
+    if (!Platform.isIOS) {
+      return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: TextView(
+            text: title,
+            fontColor: AppColors.blue,
+            fontSize: Dimens.size18,
+          ),
+          content: TextView(text: content),
+          actions: <Widget>[
+            if (cancelActionText != null)
+              TextButton(
+                onPressed: cancelOnTap ?? () => NavigationService.instance.goBack(),
+                child: TextView(text: cancelActionText),
+              ),
+            TextButton(
+              child: TextView(text: defaultActionText),
+              onPressed: () => NavigationService.instance.goBack(),
+            ),
+          ],
+        ),
+      );
+    }
+    return showCupertinoDialog(
+      context: context,
+      builder: (context) => CupertinoAlertDialog(
+        title: TextView(
+          text: title,
+          fontColor: AppColors.blue,
+          fontSize: Dimens.size18,
+        ),
+        content: TextView(text: content),
+        actions: <Widget>[
+          if (cancelActionText != null)
+            CupertinoDialogAction(
+              child: TextView(text: cancelActionText),
+              onPressed: () => NavigationService.instance.goBack(),
+            ),
+          CupertinoDialogAction(
+            child: TextView(
+              text: defaultActionText,
+              fontColor: AppColors.blue,
+            ),
+            onPressed: () => NavigationService.instance.goBack(),
+          ),
+        ],
+      ),
     );
   }
 }
