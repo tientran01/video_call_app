@@ -22,6 +22,7 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
   int? _remoteUid;
   bool _localUserJoined = false;
   bool muted = false;
+  int numberOfPeopleInThisChannel = 0;
 
   @override
   void initState() {
@@ -44,6 +45,7 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
           if (mounted) {
             setState(() {
               _localUserJoined = true;
+              numberOfPeopleInThisChannel = numberOfPeopleInThisChannel + 1;
             });
           }
         },
@@ -55,6 +57,7 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
           if (mounted) {
             setState(() {
               _remoteUid = remoteUid;
+              numberOfPeopleInThisChannel = numberOfPeopleInThisChannel + 1;
             });
           }
         },
@@ -71,6 +74,11 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
         },
         onTokenPrivilegeWillExpire: (RtcConnection connection, String token) {
           _engine.renewToken(token);
+        },
+        onLeaveChannel: (connection, stats) {
+          setState(() {
+            numberOfPeopleInThisChannel = numberOfPeopleInThisChannel - 1;
+          });
         },
       ),
     );
@@ -177,7 +185,10 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
                     iconPath: Assets.icons.icParticipants.path,
                     title: S.current.participant,
                     onTap: () => NavigationService.instance.navigateToScreen(
-                      const ParticipantPeopleWidget(),
+                      ParticipantPeopleWidget(
+                        numberOfPeopleInThisChannel:
+                            numberOfPeopleInThisChannel,
+                      ),
                     ),
                   ),
                   ToolBarItemWidget(

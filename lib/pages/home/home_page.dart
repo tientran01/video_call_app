@@ -91,9 +91,11 @@ class _HomePageState extends State<HomePage> {
       ],
       selectedLabelStyle: GoogleFonts.quicksand(
         fontWeight: FontWeight.w600,
+        fontSize: Dimens.size12,
       ),
       unselectedLabelStyle: GoogleFonts.quicksand(
         fontWeight: FontWeight.w600,
+        fontSize: Dimens.size12,
       ),
     );
   }
@@ -106,7 +108,7 @@ class _HomePageState extends State<HomePage> {
       BottomNavigationBarItem(
         icon: Image.asset(
           iconPath,
-          width: Dimens.size25,
+          width: Dimens.size20,
           color: _getItemColor(index),
         ),
         label: label,
