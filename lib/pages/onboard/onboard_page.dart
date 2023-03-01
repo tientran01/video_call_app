@@ -24,7 +24,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
         child: Stack(
           children: [
             Positioned(
-              top: DeviceHelper.shared.getWidth(context) / Dimens.size3,
+              top: DeviceHelper.shared.getWidth(context) / Dimens.size8,
               left: Dimens.size0,
               right: Dimens.size0,
               child: Lottie.asset(

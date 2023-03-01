@@ -32,8 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "birth_year": MessageLookupByLibrary.simpleMessage("Birth Year"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-        "channel_id_invalid":
-            MessageLookupByLibrary.simpleMessage("Meeting ID is not empty"),
+        "channel_id_invalid": MessageLookupByLibrary.simpleMessage(
+            "Meeting ID consists of 8 characters."),
         "channel_name": MessageLookupByLibrary.simpleMessage("Channel name"),
         "channels": MessageLookupByLibrary.simpleMessage("Channels"),
         "chat": MessageLookupByLibrary.simpleMessage("Chat"),
@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "copy": MessageLookupByLibrary.simpleMessage("Copy"),
         "country_region_codes":
             MessageLookupByLibrary.simpleMessage("Country or Region Codes"),
+        "create": MessageLookupByLibrary.simpleMessage("Create"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "create_an_phone_contact":
@@ -156,6 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Verify your age"),
         "waiting_for_user": MessageLookupByLibrary.simpleMessage(
             "Please wait for remote user to join"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Welcome")
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "with_": MessageLookupByLibrary.simpleMessage("With")
       };
 }

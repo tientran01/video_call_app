@@ -33,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Huỷ"),
         "channel_id_invalid": MessageLookupByLibrary.simpleMessage(
-            "ID Cuộc họp không được bỏ trống."),
+            "ID Cuộc họp bao gồm 8 kí tự."),
         "channel_name": MessageLookupByLibrary.simpleMessage("Tên kênh"),
         "channels": MessageLookupByLibrary.simpleMessage("Kênh"),
         "chat": MessageLookupByLibrary.simpleMessage("Trò chuyện"),
@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "copy": MessageLookupByLibrary.simpleMessage("Sao Chép"),
         "country_region_codes":
             MessageLookupByLibrary.simpleMessage("Mã quốc gia hoặc khu vực"),
+        "create": MessageLookupByLibrary.simpleMessage("Tạo"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "create_an_phone_contact":
@@ -154,6 +155,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "verify_your_age":
             MessageLookupByLibrary.simpleMessage("Xác minh tuổi của bạn"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Chào mừng")
+        "welcome": MessageLookupByLibrary.simpleMessage("Chào mừng"),
+        "with_": MessageLookupByLibrary.simpleMessage("với")
       };
 }

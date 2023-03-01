@@ -1,12 +1,13 @@
-import 'package:flutter/services.dart';
-import 'package:video_call_app/components/constants.dart';
-import 'package:video_call_app/components/device_helper.dart';
-import 'package:video_call_app/components/strings.dart';
-import 'package:video_call_app/pages/home/screen.dart';
-import 'package:video_call_app/pages/widget/text_view.dart';
+import 'widget.dart';
 
 class InforMeetingWidget extends StatelessWidget {
-  const InforMeetingWidget({super.key});
+  final String channelName;
+  final String channelId;
+  const InforMeetingWidget({
+    super.key,
+    required this.channelName,
+    required this.channelId,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,27 +24,22 @@ class InforMeetingWidget extends StatelessWidget {
             fontWeight: FontWeight.w800,
             fontColor: AppColors.blue,
           ),
-          Constants.verticalBox20,
           _inforItem(
-            subTitle: '2222 2222',
-            title: S.current.meeting_id,
+            subTitle: channelName,
+            title: S.current.channel_name,
+          ),
+          _inforItem(
+            title: S.current.password,
+            subTitle: channelId,
           ),
           _inforItem(
             title: S.current.host,
             subTitle: 'Tran Anh Tien',
           ),
           _inforItem(
-            title: S.current.password,
-            subTitle: Strings.token,
-          ),
-          _inforItem(
             title: S.current.invite_link,
             subTitle: Strings.appID,
             isCopy: true,
-          ),
-          _inforItem(
-            title: S.current.participant_id,
-            subTitle: Strings.appCertificate,
           ),
         ],
       ),

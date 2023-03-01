@@ -9,9 +9,6 @@ class TeamChatPage extends BaseScreen {
 
 class TeamChatPageState extends BaseScreenState<TeamChatPage> {
   @override
-  ActionButtonType actionButtonType() => ActionButtonType.actionCreate;
-
-  @override
   String title() => S.current.team_chat;
 
   @override

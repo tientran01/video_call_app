@@ -1,8 +1,6 @@
-import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:video_call_app/pages/base/loading_widget.dart';
-import 'package:video_call_app/pages/meetings/screen.dart';
 import 'package:video_call_app/pages/meetings/widget/participant_people_widget.dart';
-import 'package:video_call_app/pages/meetings/widget/tool_bar_item_widget.dart';
+
+import 'screen.dart';
 
 class CallVideoPage extends BaseScreen {
   final String channelID;
@@ -105,8 +103,10 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
 
   @override
   Widget body() {
-    return Scaffold(
-      body: Stack(
+    return SizedBox(
+      width: DeviceHelper.shared.getWidth(context),
+      height: DeviceHelper.shared.getHeight(context),
+      child: Stack(
         children: [
           Center(
             child: _remoteVideo(),
@@ -139,64 +139,22 @@ class CallVideoPageState extends BaseScreenState<CallVideoPage> {
             bottom: Dimens.size0,
             left: Dimens.size0,
             right: Dimens.size0,
-            child: Container(
-              width: DeviceHelper.shared.getWidth(context),
-              padding: Constants.edgeRL15T5B20,
-              decoration: const BoxDecoration(
-                color: AppColors.aliceBlue,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ToolBarItemWidget(
-                    iconPath: muted
-                        ? Assets.icons.icMicOff.path
-                        : Assets.icons.icMic.path,
-                    title: muted ? S.current.mute : S.current.unmute,
-                    onTap: () {
-                      if (mounted) {
-                        setState(() {
-                          muted = !muted;
-                        });
-                      }
-                      _engine.muteLocalAudioStream(muted);
-                    },
-                    iconColor: muted ? Colors.red : AppColors.blue,
-                    fontColor: muted ? Colors.red : AppColors.blue,
-                  ),
-                  ToolBarItemWidget(
-                    iconPath: Assets.icons.icSwitchCamera.path,
-                    title: S.current.switch_camera,
-                    onTap: () {
-                      _engine.switchCamera();
-                    },
-                  ),
-                  ToolBarItemWidget(
-                    title: S.current.end,
-                    iconPath: Assets.icons.icCall.path,
-                    iconColor: Colors.red,
-                    fontColor: Colors.red,
-                    onTap: () {
-                      _engine.leaveChannel();
-                      NavigationService.instance.goBack();
-                    },
-                  ),
-                  ToolBarItemWidget(
-                    iconPath: Assets.icons.icParticipants.path,
-                    title: S.current.participant,
-                    onTap: () => NavigationService.instance.navigateToScreen(
-                      ParticipantPeopleWidget(
-                        numberOfPeopleInThisChannel:
-                            numberOfPeopleInThisChannel,
-                      ),
-                    ),
-                  ),
-                  ToolBarItemWidget(
-                    iconPath: Assets.icons.icMore.path,
-                    title: S.current.more,
-                    onTap: () {},
-                  ),
-                ],
+            child: ToolBarWidget(
+              muted: muted,
+              onTapUnmute: () {
+                if (mounted) {
+                  setState(() {
+                    muted = !muted;
+                  });
+                }
+                _engine.muteLocalAudioStream(muted);
+              },
+              onTapSwitchCamera: () => _engine.switchCamera(),
+              onTapParticipants: () =>
+                  NavigationService.instance.navigateToScreen(
+                ParticipantPeopleWidget(
+                  numberOfPeopleInThisChannel: numberOfPeopleInThisChannel,
+                ),
               ),
             ),
           ),

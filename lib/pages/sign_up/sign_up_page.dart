@@ -54,9 +54,8 @@ class SignUpPageState extends BaseScreenState<SignUpPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextView(
-                  text: S.current.enter_your_email_address.toUpperCase(),
+                  text: S.current.enter_your_email_address,
                   upperCaseText: true,
-                  fontColor: AppColors.oldSilver,
                 ),
                 Constants.verticalBox10,
                 CustomTextFormField(
@@ -92,9 +91,8 @@ class SignUpPageState extends BaseScreenState<SignUpPage> {
                 ),
                 Constants.verticalBox50,
                 TextView(
-                  text: S.current.select_your_sign_up_method.toUpperCase(),
+                  text: S.current.select_your_sign_up_method,
                   upperCaseText: true,
-                  fontColor: AppColors.oldSilver,
                 ),
                 Constants.verticalBox10,
                 CustomButton(

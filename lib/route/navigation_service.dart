@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_call_app/components/device_helper.dart';
+import 'package:video_call_app/components/strings.dart';
 import 'package:video_call_app/pages/widget/text_view.dart';
 import '../components/app_colors.dart';
 import '../components/dimens.dart';
@@ -65,6 +66,7 @@ class NavigationService {
     bool barrierDismissible = true,
     required String title,
     required String content,
+    String? subTitle,
     String? cancelActionText,
     required String defaultActionText,
     VoidCallback? cancelOnTap,
@@ -78,11 +80,21 @@ class NavigationService {
             fontColor: AppColors.blue,
             fontSize: Dimens.size18,
           ),
-          content: TextView(text: content),
+          content: Column(
+            children: [
+              TextView(
+                text: subTitle ?? Strings.empty,
+              ),
+              TextView(
+                text: content,
+              ),
+            ],
+          ),
           actions: <Widget>[
             if (cancelActionText != null)
               TextButton(
-                onPressed: cancelOnTap ?? () => NavigationService.instance.goBack(),
+                onPressed:
+                    cancelOnTap ?? () => NavigationService.instance.goBack(),
                 child: TextView(text: cancelActionText),
               ),
             TextButton(
@@ -101,7 +113,16 @@ class NavigationService {
           fontColor: AppColors.blue,
           fontSize: Dimens.size18,
         ),
-        content: TextView(text: content),
+        content: Column(
+          children: [
+            TextView(
+              text: subTitle ?? Strings.empty,
+            ),
+            TextView(
+              text: content,
+            ),
+          ],
+        ),
         actions: <Widget>[
           if (cancelActionText != null)
             CupertinoDialogAction(
@@ -109,11 +130,12 @@ class NavigationService {
               onPressed: () => NavigationService.instance.goBack(),
             ),
           CupertinoDialogAction(
+            // ignore: sort_child_properties_last
             child: TextView(
               text: defaultActionText,
               fontColor: AppColors.blue,
             ),
-            onPressed: () => NavigationService.instance.goBack(),
+            onPressed: cancelOnTap ?? () => NavigationService.instance.goBack(),
           ),
         ],
       ),

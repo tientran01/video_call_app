@@ -50,8 +50,7 @@ class SignInPageState extends BaseScreenState<SignInPage> {
                 children: [
                   Constants.verticalBox10,
                   TextView(
-                    text: S.current.enter_your_email_address.toUpperCase(),
-                    fontColor: AppColors.oldSilver,
+                    text: S.current.enter_your_email_address,
                     upperCaseText: true,
                   ),
                   Constants.verticalBox10,
@@ -162,9 +161,8 @@ class SignInPageState extends BaseScreenState<SignInPage> {
                   ),
                   Constants.verticalBox50,
                   TextView(
-                    text: S.current.other_sign_in_methods.toUpperCase(),
+                    text: S.current.other_sign_in_methods,
                     upperCaseText: true,
-                    fontColor: AppColors.oldSilver,
                   ),
                   Constants.verticalBox10,
                   CustomButton(

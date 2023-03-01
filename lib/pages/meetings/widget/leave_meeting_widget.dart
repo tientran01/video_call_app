@@ -1,8 +1,6 @@
-import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:video_call_app/components/device_helper.dart';
-import 'package:video_call_app/pages/sign_in/screen.dart';
-import 'package:video_call_app/pages/team_chat/screen.dart';
-import 'package:video_call_app/pages/widget/circle_icon_button_widget.dart';
+
+
+import 'widget.dart';
 
 class LeaveMeetingWidget extends StatelessWidget {
   final RtcEngine engine;
