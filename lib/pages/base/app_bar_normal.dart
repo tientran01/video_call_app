@@ -98,7 +98,7 @@ class AppBarNormal extends StatelessWidget {
         );
       case ActionButtonType.actionAdd:
         return _actionIcon(
-          iconPath: Assets.icons.icAddButton.path,
+          iconPath: Assets.icons.icAdd.path,
           onPressed: () => onTapAction?.call(),
         );
       case ActionButtonType.actionText:
@@ -134,8 +134,8 @@ class AppBarNormal extends StatelessWidget {
       onPressed: onPressed,
       icon: Image.asset(
         iconPath,
-        width: Dimens.size25,
-        color: AppColors.arsenic,
+        width: Dimens.size23,
+        color: AppColors.oldSilver,
       ),
     );
   }

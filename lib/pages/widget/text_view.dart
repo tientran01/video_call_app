@@ -26,10 +26,10 @@ class TextView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,
+      upperCaseText ? text.toUpperCase() : text,
       style: GoogleFonts.quicksand(
         textStyle: TextStyle(
-          color: fontColor,
+          color: upperCaseText ? AppColors.oldSilver : fontColor,
           fontSize: upperCaseText ? Dimens.size13 : fontSize,
           fontWeight: fontWeight,
         ),

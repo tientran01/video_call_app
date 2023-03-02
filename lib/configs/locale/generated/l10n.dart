@@ -850,10 +850,10 @@ class S {
     );
   }
 
-  /// `Meeting ID is not empty`
+  /// `Meeting ID consists of 8 characters.`
   String get channel_id_invalid {
     return Intl.message(
-      'Meeting ID is not empty',
+      'Meeting ID consists of 8 characters.',
       name: 'channel_id_invalid',
       desc: '',
       args: [],
@@ -995,6 +995,26 @@ class S {
     return Intl.message(
       'Switch Camera',
       name: 'switch_camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create`
+  String get create {
+    return Intl.message(
+      'Create',
+      name: 'create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `With`
+  String get with_ {
+    return Intl.message(
+      'With',
+      name: 'with_',
       desc: '',
       args: [],
     );

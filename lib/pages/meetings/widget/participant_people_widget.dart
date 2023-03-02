@@ -1,7 +1,11 @@
-import 'package:video_call_app/pages/contacts/screen.dart';
+import 'widget.dart';
 
 class ParticipantPeopleWidget extends BaseScreen {
-  const ParticipantPeopleWidget({super.key});
+  final int numberOfPeopleInThisChannel;
+  const ParticipantPeopleWidget({
+    super.key,
+    this.numberOfPeopleInThisChannel = 0,
+  });
 
   @override
   ParticipantPeopleWidgetState createState() => ParticipantPeopleWidgetState();
@@ -19,8 +23,10 @@ class ParticipantPeopleWidgetState
 
   @override
   Widget body() => ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildItem(),
               Constants.dividerCustom(
@@ -29,13 +35,14 @@ class ParticipantPeopleWidgetState
             ],
           );
         },
-        itemCount: 1,
+        itemCount: widget.numberOfPeopleInThisChannel,
       );
 
   Widget _buildItem() {
     return Container(
       padding: Constants.edgeHori15Verti10,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
             child: ClipRRect(

@@ -1,4 +1,5 @@
 import 'package:google_fonts/google_fonts.dart';
+import 'package:video_call_app/pages/meetings/create_new_channel_page.dart';
 import 'package:video_call_app/pages/widget/no_splash_widget.dart';
 
 import 'screen.dart';
@@ -26,7 +27,6 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Constants.verticalBox10,
             TextView(
               text: S.current.personal_metting_id,
               fontWeight: FontWeight.w800,
@@ -42,9 +42,8 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
               ),
               textAlign: TextAlign.center,
             ),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
-              padding: Constants.edgeInsetsAll15,
               child: Column(
                 children: [
                   _buildPersonalMeetingItem(
@@ -81,7 +80,7 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
     required String iconPath,
   }) {
     return Container(
-      padding: Constants.edgeInsetsAll10,
+      padding: Constants.edgeHori15Verti10,
       child: Row(
         children: [
           Expanded(
@@ -126,7 +125,7 @@ class MeetingPageState extends BaseScreenState<MeetingPage> {
                   iconPath: Assets.icons.icAdd.path,
                   title: S.current.join,
                   onTap: () => NavigationService.instance.navigateToScreen(
-                    const JoinMeetingPage(),
+                    const CreateNewChannelPage(),
                   ),
                 ),
                 CustomButtonIconWidget(

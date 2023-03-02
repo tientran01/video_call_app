@@ -26,8 +26,7 @@ class ForgotPasswordPageState extends BaseScreenState<ForgotPasswordPage> {
           children: [
             Constants.verticalBox20,
             TextView(
-              text: S.current.enter_your_email_address.toUpperCase(),
-              fontColor: AppColors.oldSilver,
+              text: S.current.enter_your_email_address,
               upperCaseText: true,
             ),
             Constants.verticalBox10,

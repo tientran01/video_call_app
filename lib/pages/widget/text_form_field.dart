@@ -170,6 +170,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           return S.current.please_confirm_your_birth_year;
         }
         return Strings.empty;
+      case TypeInputTextField.channelId:
+        if (value.length == 8) {
+          return Strings.empty;
+        }
+        return S.current.channel_id_invalid;
       default:
         return null;
     }

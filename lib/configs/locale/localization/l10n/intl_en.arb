@@ -81,7 +81,7 @@
       "send": "Send",
       "password_invalid": "Password must be at least 8 characters, including at least 1 letter and 1 number.",
       "email_invalid": "Please enter a valid email address.",
-      "channel_id_invalid": "Meeting ID is not empty",
+      "channel_id_invalid": "Meeting ID consists of 8 characters.",
       "waiting_for_user": "Please wait for remote user to join",
       "host": "Host",
       "invite_link": "Invite Link",
@@ -95,5 +95,7 @@
       "chat": "Chat",
       "reactions": "Reactions",
       "mute": "Mute",
-      "switch_camera": "Switch Camera"
+      "switch_camera": "Switch Camera",
+      "create": "Create",
+      "with_": "With"
 }
